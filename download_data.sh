@@ -28,7 +28,7 @@ set +e
 echo -e "\nMigrating files ..."
 for lab in ${LABS[@]}; do
     # Check that the target directory exists before copying.
-    if [ -d "${lab}" ]; then
+    if [ -d "./${lab}" ]; then
         cp -v ${TEMPDIR}/${lab}/* ./${lab}/
     else
         echo -e "\nERROR: directory '${lab}' not found!\n"
