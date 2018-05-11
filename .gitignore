@@ -1,0 +1,102 @@
+
+# Lab data files --------------------------------------------------------------
+
+./Conditioning_Stability/stability_data.npy
+./DataVisualization/anscombe.npy
+./DataVisualization/MLB.npy
+./DataVisualization/earthquakes.npy
+./DataVisualization/countries.npy
+./Differentiation/plane.npy
+./DrazinInverse/social_network.csv
+./Exceptions_FileIO/hello_world.txt
+./Exceptions_FileIO/cf_example1.txt
+./Exceptions_FileIO/cf_example2.txt
+./FacialRecognition/faces94.zip
+./ImageSegmentation/dream.png
+./LeastSquares_Eigenvalues/circle.npy
+./LeastSquares_Eigenvalues/ellipse.npy
+./LeastSquares_Eigenvalues/housing.npy
+./LinearTransformations/horse.npy
+./MatplotlibIntro/FARS.npy
+./NumpyIntro/grid.npy
+./PageRank/matrix.txt
+./PageRank/ncaa2013.csv
+./SVD_ImageCompression/hubble.jpg
+./SVD_ImageCompression/hubble_gray.jpg
+
+# General Files ---------------------------------------------------------------
+
+# Extra Python files.
+__init__.py
+__main__.py
+*.py[cdfo]
+__pycache__/
+.ipynb_checkpoints/
+
+# Latex temporary files
+*.aux
+*.bbl
+*.blg
+*.dvi
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nlo
+*.out
+*.toc
+*.fdb_latexmk
+*.pdfsync
+*.synctex.gz
+*.nav
+*.snm
+*.vrb
+*.bcf
+*.fls
+*.pdf
+
+# OS generated files
+.DS_Store
+
+# Backup files
+*~
+*.backup
+*.bak
+*.tmp
+*.temp
+*.sav
+
+# C compiled files, extensions
+*.dll
+*.o
+*.so
+
+# Packages
+*.egg
+*.egg-info
+dist
+build
+eggs
+parts
+bin
+var
+sdist
+develop-eggs
+.installed.cfg
+
+# Unit test / coverage reports
+.coverage
+.tox
+.cache/
+htmlcov/
+
+# Miscellaneous
+build/
+faces94/
+*.mod
