@@ -7,7 +7,7 @@
 
 
 # Problems 1, 3, and 5
-def newton(f, x0, Df, tol=1e-5, maxiters=15, alpha=1.):
+def newton(f, x0, Df, tol=1e-5, maxiter=15, alpha=1.):
     """Use Newton's method to approximate a zero of the function f.
 
     Parameters:
@@ -16,7 +16,7 @@ def newton(f, x0, Df, tol=1e-5, maxiters=15, alpha=1.):
         Df (function): The derivative of f, a function from R^n to R^(nxn).
         tol (float): Convergence tolerance. The function should returns when
             the difference between successive approximations is less than tol.
-        maxiters (int): The maximum number of iterations to compute.
+        maxiter (int): The maximum number of iterations to compute.
         alpha (float): Backtracking scalar (Problem 3).
 
     Returns:
@@ -50,7 +50,7 @@ def prob2(N1, N2, P1, P2):
 
 
 # Problem 4
-def optimal_alpha(f, x0, Df, tol=1e-5, maxiters=15):
+def optimal_alpha(f, x0, Df, tol=1e-5, maxiter=15):
     """Run Newton's method for various values of alpha in (0,1].
     Plot the alpha value against the number of iterations until convergence.
 
@@ -60,7 +60,7 @@ def optimal_alpha(f, x0, Df, tol=1e-5, maxiters=15):
         Df (function): The derivative of f, a function from R^n to R^(nxn).
         tol (float): Convergence tolerance. The function should returns when
             the difference between successive approximations is less than tol.
-        maxiters (int): The maximum number of iterations to compute.
+        maxiter (int): The maximum number of iterations to compute.
 
     Returns:
         (float): a value for alpha that results in the lowest number of

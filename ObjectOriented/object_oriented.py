@@ -25,11 +25,11 @@ class Backpack:
         self.contents = []
 
     def put(self, item):
-        """Add 'item' to the backpack's list of contents."""
+        """Add an item to the backpack's list of contents."""
         self.contents.append(item)
 
     def take(self, item):
-        """Remove 'item' from the backpack's list of contents."""
+        """Remove an item from the backpack's list of contents."""
         self.contents.remove(item)
 
     # Magic Methods -----------------------------------------------------------
@@ -88,7 +88,7 @@ class Knapsack(Backpack):
         """Calculate the weight of the knapsack by counting the length of the
         string representations of each item in the contents list.
         """
-        return sum([len(str(item)) for item in self.contents])
+        return sum(len(str(item)) for item in self.contents)
 
 
 # Problem 2: Write a 'Jetpack' class that inherits from the 'Backpack' class.

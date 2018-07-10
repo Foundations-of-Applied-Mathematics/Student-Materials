@@ -1,6 +1,9 @@
 
 # Lab data files --------------------------------------------------------------
 
+BinaryTrees/english.txt
+BreadthFirstSearch/movieData.txt
+CVXOPT_Intro/ForestData.npy
 Conditioning_Stability/stability_data.npy
 DataVisualization/anscombe.npy
 DataVisualization/MLB.npy
@@ -12,17 +15,59 @@ Exceptions_FileIO/hello_world.txt
 Exceptions_FileIO/cf_example1.txt
 Exceptions_FileIO/cf_example2.txt
 FacialRecognition/faces94.zip
+FourierTransform/tada.wav
+FourierTransform/mystery_sound.wav
+FourierTransform/CGC.wav
+FourierTransform/GCG.wav
+FourierTransform/balloon.wav
+FourierTransform/chopin.wav
+FourierTransform/noisy1.wav
+FourierTransform/noisy2.wav
+FourierTransform/vuvuzela.wav
+FourierTransform/noisy_face.png
+FourierTransform/license_plate.png
+GradientMethods/linregression.txt
+GradientMethods/challenger.npy
 ImageSegmentation/dream.png
+ImageSegmentation/dream_gray.png
+InteriorPoint_Linear/simdata.txt
+InteriorPoint_Quadratic/portfolio.txt
 LeastSquares_Eigenvalues/circle.npy
 LeastSquares_Eigenvalues/ellipse.npy
 LeastSquares_Eigenvalues/housing.npy
 LinearTransformations/horse.npy
+LinkedLists/english.txt
+MarkovChains/yoda.txt
+MarkovChains/tswift1989.txt
 MatplotlibIntro/FARS.npy
+NearestNeighbor/PostalData.npz
 NumpyIntro/grid.npy
-PageRank/matrix.txt
+PageRank/web_stanford.txt
+PageRank/ncaa2010.csv
+PageRank/ncaa2011.csv
+PageRank/ncaa2012.csv
 PageRank/ncaa2013.csv
+PageRank/ncaa2014.csv
+PageRank/ncaa2015.csv
+PageRank/ncaa2016.csv
+PageRank/ncaa2017.csv
+PageRank/top250movies.txt
+PolynomialInterpolation/airdata.npy
+Profiling/names.txt
+Profiling/triangle.txt
+Profiling/triangle_large.txt
+QuasiNewtonMethods/population.npy
+RegularExpressions/fake_contacts.txt
 SVD_ImageCompression/hubble.jpg
 SVD_ImageCompression/hubble_gray.jpg
+Simplex/productMix.npz
+UnixShell1/Shell1.zip
+UnixShell2/Shell2.zip
+Wavelets/mandrill1.png
+Wavelets/woman_darkhair.png
+Wavelets/noisy_darkhair.png
+Wavelets/uncompressed_finger.png
+WebTechnologies/nyc_traffic.json
 
 # General Files ---------------------------------------------------------------
 
@@ -94,6 +139,7 @@ develop-eggs
 .coverage
 .tox
 .cache/
+.pytest_cache/
 htmlcov/
 
 # Miscellaneous

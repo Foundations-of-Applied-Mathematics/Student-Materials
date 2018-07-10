@@ -21,7 +21,7 @@ def index(A, tol=1e-5):
     """
 
     # test for non-singularity
-    if not np.allclose(la.det(A),0):
+    if not np.isclose(la.det(A), 0):
         return 0
 
     n = len(A)
@@ -125,4 +125,3 @@ class LinkPredictor:
             ValueError: If either node1 or node2 is not in the graph.
         """
         raise NotImplementedError("Problem 5 Incomplete")
-

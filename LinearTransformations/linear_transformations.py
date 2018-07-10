@@ -7,9 +7,10 @@
 
 from random import random
 
+
 # Problem 1
 def stretch(A, a, b):
-    """Scale the points in 'A' by 'a' in the x direction and 'b' in the
+    """Scale the points in A by a in the x direction and b in the
     y direction.
 
     Parameters:
@@ -20,7 +21,7 @@ def stretch(A, a, b):
     raise NotImplementedError("Problem 1 Incomplete")
 
 def shear(A, a, b):
-    """Slant the points in 'A' by 'a' in the x direction and 'b' in the
+    """Slant the points in A by a in the x direction and b in the
     y direction.
 
     Parameters:
@@ -31,7 +32,7 @@ def shear(A, a, b):
     raise NotImplementedError("Problem 1 Incomplete")
 
 def reflect(A, a, b):
-    """Reflect the points in 'A' about the line that passes through the origin
+    """Reflect the points in A about the line that passes through the origin
     and the point (a,b).
 
     Parameters:
@@ -42,7 +43,7 @@ def reflect(A, a, b):
     raise NotImplementedError("Problem 1 Incomplete")
 
 def rotate(A, theta):
-    """Rotate the points in 'A' about the origin by 'theta' radians.
+    """Rotate the points in A about the origin by theta radians.
 
     Parameters:
         A ((2,n) ndarray): Array containing points in R2 stored as columns.
@@ -54,11 +55,13 @@ def rotate(A, theta):
 # Problem 2
 def solar_system(T, omega_e, omega_m):
     """Plot the trajectories of the earth and moon over the time interval [0,T]
-    assuming the initial position of the earth is (10,0) and the initial
-    position of the moon is (11,0).
+    assuming the initial position of the earth is (x_e,0) and the initial
+    position of the moon is (x_m,0).
 
     Parameters:
         T (int): The final time.
+        x_e (float): The earth's initial x coordinate.
+        x_m (float): The moon's initial x coordinate.
         omega_e (float): The earth's angular velocity.
         omega_m (float): The moon's angular velocity.
     """

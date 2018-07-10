@@ -2,7 +2,7 @@
 # Download data files and place them in the lab folders.
 
 SOURCE="https://github.com/Foundations-of-Applied-Mathematics/Data.git"
-LABS=("Conditioning_Stability" "DataVisualization" "Differentiation" "DrazinInverse" "Exceptions_FileIO" "FacialRecognition" "ImageSegmentation" "LeastSquares_Eigenvalues" "LinearTransformations" "MatplotlibIntro" "NumpyIntro" "PageRank" "SVD_ImageCompression")
+LABS=("BinaryTrees" "BreadthFirstSearch" "CVXOPT_Intro" "Conditioning_Stability" "DataVisualization" "Differentiation" "DrazinInverse" "Exceptions_FileIO" "FacialRecognition" "FourierTransform" "GradientMethods" "ImageSegmentation" "InteriorPoint_Linear" "InteriorPoint_Quadratic" "LeastSquares_Eigenvalues" "LinearTransformations" "LinkedLists" "MarkovChains" "MatplotlibIntro" "NearestNeighbor" "NumpyIntro" "PageRank" "PolynomialInterpolation" "Profiling" "QuasiNewtonMethods" "RegularExpressions" "SVD_ImageCompression" "Simplex" "UnixShell1" "UnixShell2" "Wavelets" "WebTechnologies")
 GIT="https://git-scm.com"
 TEMPDIR="_DATA_"`date +%s`"_"
 
