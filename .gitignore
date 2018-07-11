@@ -40,7 +40,6 @@ LinkedLists/english.txt
 MarkovChains/yoda.txt
 MarkovChains/tswift1989.txt
 MatplotlibIntro/FARS.npy
-MongoDB/trump.json.zip
 NearestNeighbor/PostalData.npz
 NumpyIntro/grid.npy
 PageRank/web_stanford.txt
@@ -75,9 +74,6 @@ SQL1/us_earthquakes.csv
 SQL2/students.db
 SVD_ImageCompression/hubble.jpg
 SVD_ImageCompression/hubble_gray.jpg
-Simplex/productMix.npz
-UnixShell1/Shell1.zip
-UnixShell2/Shell2.zip
 Wavelets/mandrill1.png
 Wavelets/woman_darkhair.png
 Wavelets/noisy_darkhair.png
