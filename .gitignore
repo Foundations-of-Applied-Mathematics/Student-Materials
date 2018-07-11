@@ -16,7 +16,7 @@ Exceptions_FileIO/cf_example1.txt
 Exceptions_FileIO/cf_example2.txt
 FacialRecognition/faces94.zip
 FourierTransform/tada.wav
-FourierTransform/mystery_sound.wav
+FourierTransform/mystery_chord.wav
 FourierTransform/CGC.wav
 FourierTransform/GCG.wav
 FourierTransform/balloon.wav
@@ -40,7 +40,7 @@ LinkedLists/english.txt
 MarkovChains/yoda.txt
 MarkovChains/tswift1989.txt
 MatplotlibIntro/FARS.npy
-NearestNeighbor/PostalData.npz
+NearestNeighbor/mnist_subset.npz
 NumpyIntro/grid.npy
 PageRank/web_stanford.txt
 PageRank/ncaa2010.csv
@@ -55,7 +55,7 @@ PageRank/top250movies.txt
 Pandas1/crime_data.csv
 Pandas1/titanic.csv
 Pandas2/crime_data.csv
-Pandas2/titanic.csv
+Pandas2/sat_act.csv
 Pandas3/mammal_sleep.csv
 Pandas3/titanic.csv
 Pandas4/DJIA.csv
@@ -74,7 +74,7 @@ SQL1/us_earthquakes.csv
 SQL2/students.db
 SVD_ImageCompression/hubble.jpg
 SVD_ImageCompression/hubble_gray.jpg
-Wavelets/mandrill1.png
+Wavelets/mandrill.png
 Wavelets/woman_darkhair.png
 Wavelets/noisy_darkhair.png
 Wavelets/uncompressed_finger.png
@@ -160,4 +160,5 @@ htmlcov/
 # Miscellaneous
 build/
 faces94/
+nyc_*.json
 *.mod
