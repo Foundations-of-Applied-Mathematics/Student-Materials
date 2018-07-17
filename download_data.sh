@@ -14,12 +14,12 @@ command -v git > /dev/null ||
 mkdir ${TEMPDIR}
 cd ${TEMPDIR}
 git init --quiet
-echo -e "\nInitializing Download ...\n"
-git remote add -f origin "${SOURCE}"
+git remote add origin "${SOURCE}"
 git config core.sparseCheckout true
 for lab in ${LABS[@]}; do
     echo "${lab}" >> .git/info/sparse-checkout
 done
+echo -e "\nInitializing Download ...\n"
 git pull origin master
 cd ../
 
