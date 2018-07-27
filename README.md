@@ -1,4 +1,29 @@
 This repository contains specifications files for the Foundations of Applied Mathematics labs.
+Skip down to section 2 for setup instructions.
+
+The labs in this curriculum aim to introduce computational and mathematical concepts, walk through implementations of those concepts in Python, and use industrial-grade code to solve interesting, relevant problems.
+Lab assignments are usually about 5-10 pages long and include code examples (yellow boxes), important notes (green boxes), warnings about common errors (red boxes), and about 3-7 exercises (blue boxes).
+The lab manuals can be downloaded from [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
+
+# Submitting Assignment
+
+### Labs
+
+Every lab has a corresponding specifications file with some code to get you started and to make your submission compatible with automated test drivers.
+These materials are also hosted at [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
+To get started, download the `zip` file for your class, unzip the folder, and move it somewhere where it won't get lost.
+This folder has some setup scripts and a collection of folders, one per lab, each of which contains the specifications file(s) for that lab.
+See [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index) for the list of labs, their specifications and data files, and the lab manual that each lab belongs to.
+
+**_WARNING:_** do **not** move or rename the lab folders or the enclosed specifications files; if you do, the test drivers will not be able to find your assignment.
+Make sure your folder and files match [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
+
+Labs are submitted via git.
+
+### Homework
+
+Non-lab coding homework should be placed in the `_Homework/` folder and submitted via git.
+Be careful to name your assignment correctly so the test driver can find it.
 
 # Setup
 
@@ -16,32 +41,38 @@ There are many websites for hosting online git repositories.
 Your instructor will indicate which web service to use, but we only include instructions here for setup with Bitbucket.
 
 1. _Sign up_. Create a Bitbucket account at https://bitbucket.org.
-If you use an academic email address (ending in .edu, ac.il, edu.sg, etc.), you will get free unlimited public and private repositories.
+If you use an academic email address (ending in `.edu`, etc.), you will get free unlimited public and private repositories.
 
 2. _Make a new repository_.
-On the Bitbucket page, click the **Repositories** button from the menu at the top and select **Create repository**.
+On the Bitbucket page, click the **+** button from the menu on the left and, under **CREATE**, select **Repository**.
 Provide a name for the repository, mark the repository as **private**, and make sure the repository type is **Git**.
-Under **Advanced settings**, enter a short description for your repository, select **No forks** under forking, and select **Python** under language.
+Under **Advanced settings**, enter a short description for your repository, select **No forks** under forking, and select **Python** as the language.
 Finally, click the blue **Create repository** button.
-Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/username/repo`.
+Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/<username>/<repo>`.
 
 3. _Give the instructor access to your repository_.
-On your Bitbucket page (`https://bitbucket.org/username/repo`), click the blue **Send invitation** button at top right part of the page.
+On your Bitbucket page (`https://bitbucket.org/<username>/<repo>`), click the blue **Send invitation** button at top right part of the page.
 Enter your instructor's Bitbucket username and click **Add**.
 Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
 
 4. _Connect your folder to the new repository_.
-In a shell application (Terminal on Linux or Mac, or Git Bash on Windows), enter the following commands (here `username` is your Bitbucket username and `repo` is the name of your new repository).
+In a shell application (Terminal on Linux or Mac, or [Git Bash](http://git-scm.com/downloads) on Windows), enter the following commands.
 
 ```bash
 # Navigate to your folder.
-$ cd ~/Desktop/foldername
+$ cd /path/to/folder        # cd means 'change directory'.
 
-# Connect this folder with the online repository.
+# Make sure you are in the right place.
+$ pwd                       # pwd means 'print working directory'.
+/path/to/folder
+$ ls *.md                   # ls means 'list files'.
+README.md                   # This means README.md is in the working directory.
+
+# Connect this folder to the online repository.
 $ git init
-$ git remote add origin https://username@bitbucket.org/username/repo.git
+$ git remote add origin https://<username>@bitbucket.org/<username>/<repo>.git
 
-# Add your credentials to the folder.
+# Record your credentials.
 $ git config --local user.name "your name"
 $ git config --local user.email "your email"
 
@@ -51,9 +82,26 @@ $ git commit -m "initial commit"
 $ git push origin master
 ```
 
-If you enter the repository URL incorrectly, you can reset it with the following line.
+For example, if your Bitbucket username is `mathguy314`, the repository is called `pythonessentials`, and the folder is called `Python-Essentials-Student-Materials/` and is on the desktop, enter the following commands.
+
 ```bash
-$ git remote set-url origin https://username@bitbucket.org/username/repo.git
+$ cd ~/Desktop/Python-Essentials-Student-Materials          # Navigate to the folder.
+$ pwd                                                       # Make sure you are in the right place.
+/Users/Me/Desktop/Python-Essentials-Student-Materials
+$ ls *.md
+README.md
+$ git init                                                  # Connect this folder to the repository.
+$ git remote add origin https://mathguy314@bitbucket.org/mathguy314/pythonessentials.git
+$ git config --local user.name "archimedes"                 # Record your credentials.
+$ git config --local user.email "mathguy314@example.com"
+$ git add --all                                             # Add the contents of this folder to git.
+$ git commit -m "initial commit"
+$ git push origin master                                    # Update the repository.
+```
+
+If you enter the repository URL incorrectly in the `git remote add origin` step, you can reset it with the following line.
+```bash
+$ git remote set-url origin https://<username>@bitbucket.org/<username>/<repo>.git
 ```
 
 5. _Download data files_.
@@ -62,7 +110,7 @@ To download these files, navigate to your clone and run the `download_data.sh` b
 
 ```bash
 # Navigate to your folder and run the script.
-$ cd ~/Desktop/foldername
+$ cd /path/to/folder
 $ bash download_data.sh
 ```
 
@@ -71,11 +119,11 @@ If you want your repository on another computer after completing steps 1-4, use 
 
 ```bash
 # Clone the folder from the online repository.
-$ cd ~/Desktop
-$ git clone https://username@bitbucket.org/username/repo.git foldername
+$ cd ~/Desktop              # Navigate to where you want to put the folder.
+$ git clone https://<username>@bitbucket.org/<username>/<repo>.git <foldername>
 
-# Add your credentials to the new folder.
-$ cd foldername
+# Record your credentials in the new folder.
+$ cd <foldername>
 $ git config --local user.name "your name"
 $ git config --local user.email "your email"
 ```
@@ -112,11 +160,12 @@ This repository must be manually synchronized with the online repository via two
 
 Short version:
 ```bash
-$ cd Desktop/foldername/
+$ cd ~/Desktop/Python-Essentials-Student-Materials/
 $ git pull origin master                           # Pull updates.
 
 # Make changes to a file.
 
+# Record the changes in git.
 $ git add -u                                       # Track changes.
 $ git commit -m "Made some changes."               # Commit changes.
 $ git push origin master                           # Push updates.
@@ -125,7 +174,7 @@ $ git push origin master                           # Push updates.
 Long version:
 ```bash
 # Navigate to the clone of the repository.
-$ cd Desktop/foldername/
+$ cd ~/Desktop/Python-Essentials-Student-Materials/
 
 # Pull any updates from the online repository (such as TA feedback).
 $ git pull origin master
@@ -138,13 +187,13 @@ Already up-to-date.
 $ git status
 On branch master
 Your branch is up-to-date with 'origin/master'.
-Untracked files:
-  (use "git add <file>..." to include in what will be committed)
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
 
     PythonIntro/python_intro.py
 
-nothing added to commit but untracked files present (use "git add" to track)
-
+# Track the changes with git.
 $ git add PythonIntro/python_intro.py
 $ git status
 On branch master
@@ -157,8 +206,7 @@ Changes to be committed:
 # Commit the changes to the repository with an informative message.
 $ git commit -m "Made some changes"
 [master fed9b34] Made some changes
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 python_intro.py
+ 1 file changed, 10 insertion(+) 1 deletion(-)
 
 # Push the changes to the online repository.
 $ git push origin master
