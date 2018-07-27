@@ -1,11 +1,11 @@
 This repository contains specifications files for the Foundations of Applied Mathematics labs.
-Skip down to section 2 for setup instructions.
+Skip down to [Section 2](#setup) for setup instructions.
 
 The labs in this curriculum aim to introduce computational and mathematical concepts, walk through implementations of those concepts in Python, and use industrial-grade code to solve interesting, relevant problems.
 Lab assignments are usually about 5-10 pages long and include code examples (yellow boxes), important notes (green boxes), warnings about common errors (red boxes), and about 3-7 exercises (blue boxes).
 The lab manuals can be downloaded from [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
 
-# Submitting Assignment
+# Submitting Assignments
 
 ### Labs
 
@@ -13,17 +13,23 @@ Every lab has a corresponding specifications file with some code to get you star
 These materials are also hosted at [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
 To get started, download the `zip` file for your class, unzip the folder, and move it somewhere where it won't get lost.
 This folder has some setup scripts and a collection of folders, one per lab, each of which contains the specifications file(s) for that lab.
-See [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index) for the list of labs, their specifications and data files, and the lab manual that each lab belongs to.
+See [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index) for the complete list of labs, their specifications and data files, and the lab manual that each lab belongs to.
 
 **_WARNING:_** do **not** move or rename the lab folders or the enclosed specifications files; if you do, the test drivers will not be able to find your assignment.
-Make sure your folder and files match [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
+Make sure your folder and file names match [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
 
 Labs are submitted via git.
+To submit a lab, modify the provided specifications file and add, commit, and push the changes (see [Section 3](#using-git) for details on using git).
+The instructor will drop feedback files in the lab folder after grading the assignment.
+For example, the _Introduction to Python_ lab has `PythonIntro/python_intro.py` as its specifications file.
+To complete that assignment, modify `PythonIntro/python_intro.py` and track the changes in git.
+After grading, the instructor will create a file called `PythonIntro/PythonIntro_feedback.txt` with your score and some feedback.
 
 ### Homework
 
 Non-lab coding homework should be placed in the `_Homework/` folder and submitted via git.
-Be careful to name your assignment correctly so the test driver can find it.
+Be careful to name your assignment correctly so the instructor (and test driver) can find it.
+The instructor may drop specifications files and/or feedback files in this folder as well.
 
 # Setup
 
@@ -51,9 +57,9 @@ Finally, click the blue **Create repository** button.
 Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/<username>/<repo>`.
 
 3. _Give the instructor access to your repository_.
-On your Bitbucket page (`https://bitbucket.org/<username>/<repo>`), click the blue **Send invitation** button at top right part of the page.
-Enter your instructor's Bitbucket username and click **Add**.
-Select the blue **Write** button (so your instructor can write feedback to your repository) and click **Share**.
+On your new Bitbucket repository page (`https://bitbucket.org/<username>/<repo>` or similar), go to **Settings** in the menu to the left and select **User and group access**, the second option from the top.
+Enter your instructor's Bitbucket username under **Users** and click **Add**.
+Select the blue **Write** button so your instructor can read from and write feedback to your repository.
 
 4. _Connect your folder to the new repository_.
 In a shell application (Terminal on Linux or Mac, or [Git Bash](http://git-scm.com/downloads) on Windows), enter the following commands.
@@ -114,6 +120,8 @@ $ cd /path/to/folder
 $ bash download_data.sh
 ```
 
+You can also find individual data files through [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
+
 6. (Optional) _Clone your repository_.
 If you want your repository on another computer after completing steps 1-4, use the following commands.
 
@@ -134,7 +142,7 @@ Repeat step 5 in this clone as well.
 Git manages the history of a file system through _commits_, or checkpoints.
 Use `git status` to see the files that have been changed since the last commit.
 These changes are then moved to the _staging area_, a list of files to save during the next commit, with `git add <filename(s)>`.
-Save the changes in the staging area with `git commit -m "A brief message describing the changes"`.
+Save the changes in the staging area with `git commit -m "<A brief message describing the changes>"`.
 
 All of these commands are done within a clone of the repository, stored somewhere on a computer.
 This repository must be manually synchronized with the online repository via two other git commands: `git pull origin master`, to pull updates from the web to the computer; and `git push origin master`, to push updates from the computer to the web.
