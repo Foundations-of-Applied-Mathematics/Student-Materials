@@ -45,12 +45,13 @@ The instructor may drop specifications files and/or feedback files in this folde
 This website is a _git repository_, an online storage place for code and other small files.
 _Git_ is the underlying software that manages updates between this online repository and the copies of the repository, called _clones_, stored locally on computers.
 If git is not already installed on your computer, download it at http://git-scm.com/downloads.
-If you have never used git, you might want to read a few of the following resources.
-- https://git-scm.com/docs/gittutorial
-- https://www.atlassian.com/git/tutorials
-- https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf
-- https://docs.gitlab.com/ce/gitlab-basics/start-using-git.html
-- https://www.codecademy.com/learn/learn-git
+If you have never used git, you might want to check out a few of the following resources.
+- [Official git tutorial](https://git-scm.com/docs/gittutorial)
+- [Bitbucket git tutorials](https://www.atlassian.com/git/tutorials)
+- [GitHub git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
+- [GitLab git tutorial](https://docs.gitlab.com/ce/gitlab-basics/start-using-git.html)
+- [Codecademy git lesson](https://www.codecademy.com/learn/learn-git)
+- [Training video series by GitHub](https://www.youtube.com/playlist?list=PLg7s6cbtAD15G8lNyoaYDuKZSKyJrgwB-)
 
 There are many websites for hosting online git repositories.
 Your instructor will indicate which web service to use, but we only include instructions here for setup with Bitbucket.
@@ -163,18 +164,18 @@ This repository must be manually synchronized with the online repository via two
 
 | Command                     | Explanation                                    |
 |:------------------------------------------------|:---------------------------|
-| `git status`               | Display the staging area and untracked changes.|
-| `git pull origin master`   | Pull down changes from the online repository.  |
-| `git push origin master`   | Push up changes to the online repository.      |
-| `git add <filename(s)>`    | Add a file or files to the staging area.       |
-| `git add -u`               | Add all of the modified, previously tracked files to the staging area.|
-| `git commit -m "<message>"` | Save the changes in the staging area with a given message.|
+| `git status` | Display the staging area and untracked changes. |
+| `git pull origin master` | Pull down changes from the online repository. |
+| `git push origin master` | Push up changes to the online repository. |
+| `git add <filename(s)>` | Add a file or files to the staging area. |
+| `git add -u` | Add all of the modified, previously tracked files to the staging area. |
+| `git commit -m "<message>"` | Save the changes in the staging area with a given message. |
 | `git checkout -- <filename>` | Revoke the changes made since the last commit on a file that is not in the staging area. |
-| `git reset -- <filename>`  | Remove a file from the staging area.           |
-| `git diff <filename>`      | See the changes made on an unstaged file since the last commit.|
-| `git diff --cached <filename>` | See the changes made on a staged file since the last commit.|
-| `git config --local user.name "your name"` | Record your credentials |
-| `git config --local user.email youremail@gmail.com` | Record your credentials |
+| `git reset -- <filename>` | Remove a file from the staging area. |
+| `git diff <filename>` | See the changes made on an unstaged file since the last commit. |
+| `git diff --cached <filename>` | See the changes made on a staged file since the last commit. |
+| `git config --local user.name "your name"` | Record your credentials. |
+| `git config --local user.email youremail@gmail.com` | Record your credentials. |
 
 ### Example Work Session
 
