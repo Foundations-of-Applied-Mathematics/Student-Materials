@@ -5,6 +5,15 @@ The labs in this curriculum aim to introduce computational and mathematical conc
 Lab assignments are usually about 5-10 pages long and include code examples (yellow boxes), important notes (green boxes), warnings about common errors (red boxes), and about 3-7 exercises (blue boxes).
 The lab manuals can be downloaded from [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
 
+**Contents**
+- [Submitting Assignments](#submitting-assignments)
+    - [Labs](#labs)
+    - [Homework](#homework)
+- [Setup](#setup)
+- [Using Git](#using-git)
+    - [Common Git Commands](#common-git-commands)
+    - [Example Work Session](#example-work-session)
+
 # Submitting Assignments
 
 ### Labs
@@ -135,8 +144,10 @@ $ git clone https://<username>@bitbucket.org/<username>/<repo>.git <foldername>
 $ cd <foldername>
 $ git config --local user.name "your name"
 $ git config --local user.email "your email"
+
+# Download data files to the new folder.
+$ bash download_data.sh
 ```
-Repeat step 5 in this clone as well.
 
 # Using Git
 
