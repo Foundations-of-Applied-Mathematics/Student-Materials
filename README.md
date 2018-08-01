@@ -1,5 +1,5 @@
 This repository contains specifications files for the Foundations of Applied Mathematics labs.
-Skip down to [Section 2](#setup) for setup instructions.
+Skip down to [Setup](#setup) for setup instructions.
 
 The labs in this curriculum aim to introduce computational and mathematical concepts, walk through implementations of those concepts in Python, and use industrial-grade code to solve interesting, relevant problems.
 Lab assignments are usually about 5-10 pages long and include code examples (yellow boxes), important notes (green boxes), warnings about common errors (red boxes), and about 3-7 exercises (blue boxes).
@@ -24,7 +24,7 @@ To get started, download the `zip` file for your class, unzip the folder, and mo
 This folder has some setup scripts and a collection of folders, one per lab, each of which contains the specifications file(s) for that lab.
 See [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index) for the complete list of labs, their specifications and data files, and the lab manual that each lab belongs to.
 
-**_WARNING:_** do **not** move or rename the lab folders or the enclosed specifications files; if you do, the test drivers will not be able to find your assignment.
+**_WARNING:_** Do **not** move or rename the lab folders or the enclosed specifications files; if you do, the test drivers will not be able to find your assignment.
 Make sure your folder and file names match [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
 
 Labs are submitted via git.
@@ -159,6 +159,22 @@ Save the changes in the staging area with `git commit -m "<A brief message descr
 
 All of these commands are done within a clone of the repository, stored somewhere on a computer.
 This repository must be manually synchronized with the online repository via two other git commands: `git pull origin master`, to pull updates from the web to the computer; and `git push origin master`, to push updates from the computer to the web.
+
+**_NOTE_**: When pulling updates with `git pull origin master`, your terminal may sometimes display the following message.
+```bash
+Merge branch 'master' of https://bitbucket.org/<username>/<repo> into master
+
+# Please enter a commit message to explain why this merge is necessary,
+# especially if it merges an updated upstream into a topic branch.
+#
+# Lines starting with '#' will be ignored, and an empty message aborts
+# the commit.
+~
+~
+```
+This means that someone else (the instructor) has pushed a commit that you do not yet have, while you have also made one or more commits locally that they do not have.
+This screen, displayed in [_vim_](https://en.wikipedia.org/wiki/Vim_(text_editor)), is asking you to enter a message (or use the default message) to create a _merge commit_ that will reconcile both changes.
+To close this screen and create the merge commit, type `:wq` and press `enter`.
 
 ### Common Git Commands
 
