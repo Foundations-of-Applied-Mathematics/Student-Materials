@@ -5,7 +5,6 @@
 <Date>
 """
 
-
 # Problem 1
 def prob1():
     """Compile and return a regular expression pattern object with the
@@ -15,9 +14,7 @@ def prob1():
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
     raise NotImplementedError("Problem 1 Incomplete")
-
-
-
+        
 # Problem 2
 def prob2():
     """Compile and return a regular expression pattern object that matches
@@ -27,7 +24,6 @@ def prob2():
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
     raise NotImplementedError("Problem 2 Incomplete")
-
 
 # Problem 3
 def prob3():
@@ -42,7 +38,6 @@ def prob3():
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
-
 # Problem 4
 def prob4():
     """Compile and return a regular expression pattern object that matches
@@ -52,7 +47,6 @@ def prob4():
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
     raise NotImplementedError("Problem 4 Incomplete")
-
 
 # Problem 5
 def prob5(code):
@@ -68,7 +62,6 @@ def prob5(code):
     """
     raise NotImplementedError("Problem 5 Incomplete")
 
-
 # Problem 6
 def prob6(filname="fake_contacts.txt"):
     """Use regular expressions to parse the data in the given file and format
@@ -82,4 +75,5 @@ def prob6(filname="fake_contacts.txt"):
     Returns:
         (dict): a dictionary mapping names to a dictionary of personal info.
     """
+
     raise NotImplementedError("Problem 6 Incomplete")
