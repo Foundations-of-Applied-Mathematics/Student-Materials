@@ -6,6 +6,7 @@ Lab assignments are usually about 5-10 pages long and include code examples (yel
 The lab manuals can be downloaded from [foundations-of-applied-mathematics.github.io](http://foundations-of-applied-mathematics.github.io/).
 
 **Contents**
+
 - [Submitting Assignments](#submitting-assignments)
     - [Labs](#labs)
     - [Homework](#homework)
@@ -51,6 +52,7 @@ This website is a _git repository_, an online storage place for code and other s
 _Git_ is the underlying program that manages updates between this online repository and the copies of the repository, called _clones_, stored locally on computers.
 If git is not already installed on your computer, download it at [http://git-scm.com/downloads](http://git-scm.com/downloads).
 If you have never used git, you might want to read a few of the following resources.
+
 - [Official git tutorial](https://git-scm.com/docs/gittutorial)
 - [Bitbucket git tutorials](https://www.atlassian.com/git/tutorials)
 - [GitHub git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
@@ -178,8 +180,8 @@ This repository must be manually synchronized with the online repository via two
 
 ### Common Git Commands
 
-| Command                     | Explanation                                    |
-|:------------------------------------------------|:---------------------------|
+| Command | Explanation |
+|:--------|:------------|
 | `git status` | Display the staging area and untracked changes. |
 | `git pull origin master` | Pull changes from the online repository. |
 | `git push origin master` | Push changes to the online repository. |
