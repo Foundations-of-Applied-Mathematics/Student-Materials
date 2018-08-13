@@ -149,7 +149,16 @@ $ bash download_data.sh
 
 You can also find individual data files through [Student-Materials/wiki/Lab-Index](https://github.com/Foundations-of-Applied-Mathematics/Student-Materials/wiki/Lab-Index).
 
-6. (Optional) _Clone your repository_.
+6. _Install Python package dependencies_.
+The labs require several third-party Python packages that don't come bundled with Anaconda.
+Run the following command to install the necessary packages.
+```bash
+# Navigate to your folder and run the script.
+$ cd /path/to/folder
+$ bash install_dependencies.sh
+```
+
+7. (Optional) _Clone your repository_.
 If you want your repository on another computer after completing steps 1-4, use the following commands.
 
 ```bash

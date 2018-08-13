@@ -1,0 +1,2 @@
+autograd >= 1.2
+pydataset >= 0.2.0
