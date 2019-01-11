@@ -125,27 +125,3 @@ def tic_tac_toe_client(server_address=("0.0.0.0", 44444)):
     """A client program for tic_tac_toe_server()."""
     raise NotImplementedError("Problem 4 Incomplete")
 
-
-# Problem 5
-def download_nyc_data():
-    """Make requests to download data from the following API endpoints.
-
-    Recycling bin locations: https://data.cityofnewyork.us/api/views/sxx4-xhzg/rows.json?accessType=DOWNLOAD
-
-    Residential addresses: https://data.cityofnewyork.us/api/views/7823-25a9/rows.json?accessType=DOWNLOAD
-
-    Save the recycling bin data as nyc_recycling.json and the residential
-    address data as nyc_addresses.json.
-    """
-    raise NotImplementedError("Problem 5 Incomplete")
-
-
-# Problem 6
-def prob6(recycling="nyc_recycling.json", addresses="nyc_addresses.json"):
-    """Load the specifiec data files. Use a k-d tree to determine the distances
-    from each address to the nearest recycling bin, and plot a histogram of
-    the results.
-
-    DO NOT call download_nyc_data() in this function.
-    """
-    raise NotImplementedError("Problem 6 Incomplete")

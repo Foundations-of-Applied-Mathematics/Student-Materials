@@ -6,118 +6,148 @@
 """
 
 
-# Problems 1-3: Implement the following class
-class Graph(object):
+# Problems 1-3
+class Graph:
     """A graph object, stored as an adjacency dictionary. Each node in the
-    graph is a key in the dictionary. The value of each key is a list of the
-    corresponding node's neighbors.
+    graph is a key in the dictionary. The value of each key is a set of
+    the corresponding node's neighbors.
 
     Attributes:
-        dictionary: the adjacency list of the graph.
+        d (dict): the adjacency dictionary of the graph.
     """
+    def __init__(self, adjacency={}):
+        """Store the adjacency dictionary as a class attribute"""
+        self.d = dict(adjacency)
 
-    def __init__(self, adjacency):
-        """Store the adjacency dictionary as a class attribute."""
-        self.dictionary = adjacency
+    def __str__(self):
+        """String representation: a view of the adjacency dictionary."""
+        return str(self.d)
 
     # Problem 1
-    def __str__(self):
-        """String representation: a view of the adjacency dictionary.
+    def add_node(self, n):
+        """Add n to the graph (with no initial edges) if it is not already
+        present.
 
-        Example:
-            >>> test = {'A':['B'], 'B':['A', 'C',], 'C':['B']}
-            >>> print(Graph(test))
-            A: B
-            B: A; C
-            C: B
+        Parameters:
+            n: the label for the new node.
+        """
+        raise NotImplementedError("Problem 1 Incomplete")
+
+    # Problem 1
+    def add_edge(self, u, v):
+        """Add an edge between node u and node v. Also add u and v to the graph
+        if they are not already present.
+
+        Parameters:
+            u: a node label.
+            v: a node label.
+        """
+        raise NotImplementedError("Problem 1 Incomplete")
+
+    # Problem 1
+    def remove_node(self, n):
+        """Remove n from the graph, including all edges adjacent to it.
+
+        Parameters:
+            n: the label for the node to remove.
+
+        Raises:
+            KeyError: if n is not in the graph.
+        """
+        raise NotImplementedError("Problem 1 Incomplete")
+
+    # Problem 1
+    def remove_edge(self, u, v):
+        """Remove the edge between nodes u and v.
+
+        Parameters:
+            u: a node label.
+            v: a node label.
+
+        Raises:
+            KeyError: if u or v are not in the graph, or if there is no
+                edge between u and v.
         """
         raise NotImplementedError("Problem 1 Incomplete")
 
     # Problem 2
-    def traverse(self, start):
-        """Begin at 'start' and perform a breadth-first search until all
-        nodes in the graph have been visited. Return a list of values,
-        in the order that they were visited.
+    def traverse(self, source):
+        """Traverse the graph with a breadth-first search until all nodes
+        have been visited. Return the list of nodes in the order that they
+        were visited.
 
         Parameters:
-            start: the node to start the search at.
+            source: the node to start the search at.
 
         Returns:
-            the list of visited nodes (in order of visitation).
+            (list): the nodes in order of visitation.
 
         Raises:
-            ValueError: if 'start' is not in the adjacency dictionary.
-
-        Example:
-            >>> test = {'A':['B'], 'B':['A', 'C',], 'C':['B']}
-            >>> Graph(test).traverse('B')
-            ['B', 'A', 'C']
+            KeyError: if the source node is not in the graph.
         """
         raise NotImplementedError("Problem 2 Incomplete")
 
     # Problem 3
-    def shortest_path(self, start, target):
-        """Begin at the node containing 'start' and perform a breadth-first
-        search until the node containing 'target' is found. Return a list
-        containg the shortest path from 'start' to 'target'. If either of
-        the inputs are not in the adjacency graph, raise a ValueError.
+    def shortest_path(self, source, target):
+        """Begin a BFS at the source node and proceed until the target is
+        found. Return a list containing the nodes in the shortest path from
+        the source to the target, including endoints.
 
         Parameters:
-            start: the node to start the search at.
+            source: the node to start the search at.
             target: the node to search for.
 
         Returns:
-            A list of nodes along the shortest path from start to target,
+            A list of nodes along the shortest path from source to target,
                 including the endpoints.
 
-        Example:
-            >>> test = {'A':['B', 'F'], 'B':['A', 'C'], 'C':['B', 'D'],
-            ...         'D':['C', 'E'], 'E':['D', 'F'], 'F':['A', 'E', 'G'],
-            ...         'G':['A', 'F']}
-            >>> Graph(test).shortest_path('A', 'G')
-            ['A', 'F', 'G']
+        Raises:
+            KeyError: if the source or target nodes are not in the graph.
         """
         raise NotImplementedError("Problem 3 Incomplete")
 
 
-# Problem 4: Write the following function
-def convert_to_networkx(dictionary):
-    """Convert 'dictionary' to a networkX object and return it."""
-    raise NotImplementedError("Problem 4 Incomplete")
+# Problems 4-6
+class MovieGraph:
+    """Class for solving the Kevin Bacon problem with movie data from IMDb."""
 
+    # Problem 4
+    def __init__(self, filename="movie_data.txt"):
+        """Initialize a set for movie titles, a set for actor names, and an
+        empty NetworkX Graph, and store them as attributes. Read the speficied
+        file line by line, adding the title to the set of movies and the cast
+        members to the set of actors. Add an edge to the graph between the
+        movie and each cast member.
 
-# Problems 5-7: Implement the following class
-class BaconSolver(object):
-    """Class for solving the Kevin Bacon problem."""
+        Each line of the file represents one movie: the title is listed first,
+        then the cast members, with entries separated by a '/' character.
+        For example, the line for 'The Dark Knight (2008)' starts with
+
+        The Dark Knight (2008)/Christian Bale/Heath Ledger/Aaron Eckhart/...
+
+        Any '/' characters in movie titles have been replaced with the
+        vertical pipe character | (for example, Frost|Nixon (2008)).
+        """
+        raise NotImplementedError("Problem 4 Incomplete")
 
     # Problem 5
-    def __init__(self, filename="movieData.txt"):
-        """Initialize the networkX graph with data from the specified
-        file. Store the graph as a class attribute. Also store the collection
-        of actors in the file as an attribute.
+    def path_to_actor(self, source, target):
+        """Compute the shortest path from source to target and the degrees of
+        separation between source and target.
+
+        Returns:
+            (list): a shortest path from source to target, including endpoints.
+            (int): the number of steps from source to target, excluding movies.
         """
         raise NotImplementedError("Problem 5 Incomplete")
 
     # Problem 6
-    def path_to_bacon(self, start, target="Bacon, Kevin"):
-        """Find the shortest path from 'start' to 'target'."""
-        raise NotImplementedError("Problem 6 Incomplete")
-
-    # Problem 7
-    def bacon_number(self, start, target="Bacon, Kevin"):
-        """Return the Bacon number of 'start'."""
-        raise NotImplementedError("Problem 7 Incomplete")
-
-    # Problem 7
-    def average_bacon(self, target="Bacon, Kevin"):
-        """Calculate the average Bacon number in the data set.
-        Note that actors are not guaranteed to be connected to the target.
-
-        Parameters:
-            target (str): the node to search the graph for.
+    def average_number(self, target):
+        """Calculate the shortest path lengths of every actor to the target
+        (not including movies). Plot the distribution of path lengths and
+        return the average path length.
 
         Returns:
-            (float): the average (finite) Bacon number
-            (int): the number of actors not connected to the target.
+            (float): the average path length from actor to target.
         """
-        raise NotImplementedError("Problem 7 Incomplete")
+        raise NotImplementedError("Problem 6 Incomplete")
