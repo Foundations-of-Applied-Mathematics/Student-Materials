@@ -14,7 +14,7 @@ def prob1():
         (_sre.SRE_Pattern): a compiled regular expression pattern object.
     """
     raise NotImplementedError("Problem 1 Incomplete")
-        
+
 # Problem 2
 def prob2():
     """Compile and return a regular expression pattern object that matches
@@ -63,7 +63,7 @@ def prob5(code):
     raise NotImplementedError("Problem 5 Incomplete")
 
 # Problem 6
-def prob6(filname="fake_contacts.txt"):
+def prob6(filename="fake_contacts.txt"):
     """Use regular expressions to parse the data in the given file and format
     it uniformly, writing birthdays as mm/dd/yyyy and phone numbers as
     (xxx)xxx-xxxx. Construct a dictionary where the key is the name of an

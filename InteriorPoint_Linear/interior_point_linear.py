@@ -12,7 +12,7 @@ from matplotlib import pyplot as plt
 
 
 # Auxiliary Functions ---------------------------------------------------------
-def startingPoint(A, b, c):
+def starting_point(A, b, c):
     """Calculate an initial guess to the solution of the linear program
     min c^T x, Ax = b, x>=0.
     Reference: Nocedal and Wright, p. 410.
@@ -39,28 +39,7 @@ def startingPoint(A, b, c):
     return x, lam, mu
 
 # Use this linear program generator to test your interior point method.
-def randomLP(m):
-    """Generate a 'square' linear program min c^T x s.t. Ax = b, x>=0.
-    First generate m feasible constraints, then add slack variables.
-    Parameters:
-        m -- positive integer: the number of desired constraints
-             and the dimension of space in which to optimize.
-    Returns:
-        A -- array of shape (m,n).
-        b -- array of shape (m,).
-        c -- array of shape (n,).
-        x -- the solution to the LP.
-    """
-    n = m
-    A = np.random.random((m,n))*20 - 10
-    A[A[:,-1]<0] *= -1
-    x = np.random.random(n)*10
-    b = A.dot(x)
-    c = A.sum(axis=0)/float(n)
-    return A, b, -c, x
-
-# This random linear program generator is more general than the first.
-def randomLP2(m,n):
+def randomLP(m,n):
     """Generate a linear program min c^T x s.t. Ax = b, x>=0.
     First generate m feasible constraints, then add
     slack variables to convert it into the above form.

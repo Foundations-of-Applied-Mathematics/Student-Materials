@@ -1,4 +1,4 @@
-# solutions.py
+# gradient_methods.py
 """Volume 2: Gradient Descent Methods.
 <Name>
 <Class>

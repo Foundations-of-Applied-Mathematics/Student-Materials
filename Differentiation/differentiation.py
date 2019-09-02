@@ -1,4 +1,4 @@
-# solutions.py
+# differentiation.py
 """Volume 1: Differentiation.
 <Name>
 <Class>
@@ -71,9 +71,10 @@ def prob4():
 
     Load the data, convert alpha and beta to radians, then compute the
     coordinates x(t) and y(t) at each given t. Approximate x'(t) and y'(t)
-    using a forward difference quotient for t=7, a backward difference
-    quotient for t=14, and a centered difference quotient for t=8,9,...,13.
-    Return the values of the speed at each t.
+    using a first order forward difference quotient for t=7, a first order
+    backward difference quotient for t=14, and a second order centered
+    difference quotient for t=8,9,...,13. Return the values of the speed at
+    each t.
     """
     raise NotImplementedError("Problem 4 Incomplete")
 

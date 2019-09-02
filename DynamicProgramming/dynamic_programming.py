@@ -24,20 +24,20 @@ def calc_stopping(N):
 
 # Problem 2
 def graph_stopping_times(N):
-    """Graph the optimal percentage of candidates to date optimal
-    and expected value for the marriage problem for n=3,4,...,M.
+    """Graph the optimal stopping percentage of candidates to interview and 
+    the maximum probability against M.
 
     Parameters:
         M (int): The maximum number of candidates.
 
     Returns:
-        (float): The optimal stopping percent of candidates for N.
+        (float): The optimal stopping percent of candidates for M.
     """
     raise NotImplementedError("Problem 2 Incomplete")
 
 
 # Problem 3
-def get_consumption(N, u=np.sqrt):
+def get_consumption(N, u=lambda x: np.sqrt(x)):
     """Create the consumption matrix for the given parameters.
 
     Parameters:
@@ -46,13 +46,13 @@ def get_consumption(N, u=np.sqrt):
         u (function): Utility function.
 
     Returns:
-        ((N+1,N+1) ndarray): The consumption matrix.
+        C ((N+1,N+1) ndarray): The consumption matrix.
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
 
 # Problems 4-6
-def eat_cake(T, N, B, u=np.sqrt):
+def eat_cake(T, N, B, u=lambda x: np.sqrt(x)):
     """Create the value and policy matrices for the given parameters.
 
     Parameters:
@@ -68,7 +68,7 @@ def eat_cake(T, N, B, u=np.sqrt):
         P ((N+1,T+1) ndarray): The matrix where the (ij)th entry is the
             number of pieces to consume given i pieces at time j.
     """
-    raise NotImplementedError("Problem 4 Incomplete")
+    raise NotImplementedError("Problems 4-6 Incomplete")
 
 
 # Problem 7
@@ -84,7 +84,7 @@ def find_policy(T, N, B, u=np.sqrt):
         u (function): Utility function.
 
     Returns:
-        ((N,) ndarray): The matrix describing the optimal percentage to
+        ((T,) ndarray): The matrix describing the optimal percentage to
             consume at each time.
     """
     raise NotImplementedError("Problem 7 Incomplete")

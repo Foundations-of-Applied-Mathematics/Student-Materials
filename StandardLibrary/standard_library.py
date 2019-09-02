@@ -51,3 +51,5 @@ def power_set(A):
 
 
 # Problem 5: Implement shut the box.
+def shut_the_box(player, timelimit):
+    """Play a single game of shut the box."""

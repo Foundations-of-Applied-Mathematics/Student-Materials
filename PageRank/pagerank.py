@@ -84,7 +84,8 @@ def rank_websites(filename="web_stanford.txt", epsilon=0.85):
     """Read the specified file and construct a graph where node j points to
     node i if webpage j has a hyperlink to webpage i. Use the DiGraph class
     and its itersolve() method to compute the PageRank values of the webpages,
-    then rank them with get_ranks().
+    then rank them with get_ranks(). If two webpages have the same rank,
+    resolve ties by listing the webpage with the larger ID number first.
 
     Each line of the file has the format
         a/b/c/d/e/f...

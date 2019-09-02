@@ -1,4 +1,4 @@
-# solutions.py
+# quassian_quadrature.py
 """Volume 2: Gaussian Quadrature.
 <Name>
 <Class>

@@ -1,4 +1,3 @@
-# solutions.py
 # iterative_solvers.py
 """Volume 1: Iterative Solvers.
 <Name>
@@ -34,7 +33,7 @@ def diag_dom(n, num_entries=None):
     return A
 
 # Problems 1 and 2
-def jacobi_method(A, b, tol=1e-8, maxiter=100):
+def jacobi(A, b, tol=1e-8, maxiter=100):
     """Calculate the solution to the system Ax = b via the Jacobi Method.
 
     Parameters:

@@ -1,4 +1,4 @@
-# solutions.py
+# oneD_optimization.py
 """Volume 2: One-Dimensional Optimization.
 <Name>
 <Class>

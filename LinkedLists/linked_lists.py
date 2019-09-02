@@ -10,7 +10,11 @@
 class Node:
     """A basic node class for storing data."""
     def __init__(self, data):
-        """Store the data in the value attribute."""
+        """Store the data in the value attribute.
+                
+        Raises:
+            TypeError: if data is not of type int, float, or str.
+        """
         self.value = data
 
 

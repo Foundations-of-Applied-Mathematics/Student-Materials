@@ -10,6 +10,7 @@
 #Down = 1
 #Right = 2
 #Up= 3
+
 P = {s : {a: [] for a in range(4)} for s in range(4)}
 P[0][0] = [(0, 0, 0, False)]
 P[0][1] = [(1, 2, -1, False)]
@@ -45,6 +46,7 @@ def value_iteration(P, nS ,nA, beta = 1, tol=1e-8, maxiter=3000):
 
     Returns:
        v (ndarray): The discrete values for the true value function.
+       n (int): number of iterations
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
@@ -97,17 +99,20 @@ def policy_iteration(P, nS, nA, beta=1, tol=1e-8, maxiter=200):
         maxiter (int): The maximum number of iterations.
 
     Returns:
+    	v (ndarray): The discrete values for the true value function
         policy (ndarray): which direction to moved in each square.
+        n (int): number of iterations
     """
     raise NotImplementedError("Problem 4 Incomplete")
     
-# Problem 5
-def frozenlake(basic_case=True, M=1000):
+# Problem 5 and 6
+def frozen_lake(basic_case=True, M=1000, render=False):
     """ Finds the optimal policy to solve the FrozenLake problem.
     
     Parameters:
     basic_case (boolean): True for 4x4 and False for 8x8 environemtns. 
     M (int): The number of times to run the simulation.
+    render (boolean): Whether to draw the environment.
     
     Returns:
     vi_policy (ndarray): The optimal policy for value iteration.
@@ -119,16 +124,17 @@ def frozenlake(basic_case=True, M=1000):
     raise NotImplementedError("Problem 5 Incomplete")
     
 # Problem 6
-def run_simulation(env, policy, beta = 1.0):
+def run_simulation(env, policy, render=True, beta = 1.0):
     """ Evaluates policy by using it to run a simulation and calculate the reward.
     
     Parameters:
     env (gym environment): The gym environment. 
     policy (ndarray): The policy used to simulate.
-    beta float): The discount factor.
+    beta float: The discount factor.
+    render (boolean): Whether to draw the environment.
     
     Returns:
-    total reward (float): Value of the total reward recieved under policy.
+    total reward (float): Value of the total reward received under policy.
     """
     raise NotImplementedError("Problem 6 Incomplete")
 

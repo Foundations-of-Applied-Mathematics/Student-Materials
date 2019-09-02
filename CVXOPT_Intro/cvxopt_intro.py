@@ -86,13 +86,14 @@ def l2Min(A, b):
 
 # Problem 6
 def prob6():
-    """Solve the allocation model problem in 'ForestData.npy'.
-    Note that the first three rows of the data correspond to the first
-    analysis area, the second group of three rows correspond to the second
-    analysis area, and so on.
-
+    """Solve the college student food problem. Read the data in the file 
+    food.npy to create a convex optimization problem. The first column is 
+    the price, second is the number of servings, and the rest contain
+    nutritional information. Use cvxopt to find the minimizer and primal 
+    objective.
+    
     Returns (in order):
         The optimizer x (ndarray)
-        The optimal value (sol['primal objective']*-1000)
-    """
+        The optimal value (sol['primal objective'])
+    """	 
     raise NotImplementedError("Problem 6 Incomplete")

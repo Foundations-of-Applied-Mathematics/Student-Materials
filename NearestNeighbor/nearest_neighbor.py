@@ -24,7 +24,15 @@ def exhaustive_search(X, z):
 
 
 # Problem 2: Write a KDTNode class.
+class KDTNode:
+    """Node class for K-D Trees.
 
+    Attributes:
+        left (KDTNode): a reference to this node's left child.
+        right (KDTNode): a reference to this node's right child.
+        value ((k,) ndarray): a coordinate in k-dimensional space.
+        pivot (int): the dimension of the value to make comparisons on.
+    """
 
 # Problems 3 and 4
 class KDT:
@@ -70,6 +78,7 @@ class KDT:
         Raises:
             ValueError: if data does not have the same dimensions as other
                 values in the tree.
+            ValueError: if data is already in the tree
         """
         raise NotImplementedError("Problem 3 Incomplete")
 
@@ -109,7 +118,10 @@ class KDT:
 
 
 # Problem 5: Write a KNeighborsClassifier class.
-
+class KNeighborsClassifier:
+    """A k-nearest neighbors classifier that uses SciPy's KDTree to solve
+    the nearest neighbor problem efficiently.
+    """
 
 # Problem 6
 def prob6(n_neighbors, filename="mnist_subset.npz"):
