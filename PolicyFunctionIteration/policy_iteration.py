@@ -69,7 +69,7 @@ def extract_policy(P, nS, nA, v, beta = 1.0):
     
 # Problem 3
 def compute_policy_v(P, nS, nA, policy, beta=1.0, tol=1e-8):
-    """Computes the value function for a policy.
+    """Computes the value function for a policy using policy evaluation.
     
     Parameters:
         P (dict): The Markov relationship 
@@ -100,26 +100,26 @@ def policy_iteration(P, nS, nA, beta=1, tol=1e-8, maxiter=200):
 
     Returns:
     	v (ndarray): The discrete values for the true value function
-        policy (ndarray): which direction to moved in each square.
+        policy (ndarray): which direction to move in each square.
         n (int): number of iterations
     """
     raise NotImplementedError("Problem 4 Incomplete")
     
 # Problem 5 and 6
 def frozen_lake(basic_case=True, M=1000, render=False):
-    """ Finds the optimal policy to solve the FrozenLake problem.
+    """ Finds the optimal policy to solve the FrozenLake problem
     
     Parameters:
     basic_case (boolean): True for 4x4 and False for 8x8 environemtns. 
-    M (int): The number of times to run the simulation.
+    M (int): The number of times to run the simulation using problem 6.
     render (boolean): Whether to draw the environment.
     
     Returns:
     vi_policy (ndarray): The optimal policy for value iteration.
-    vi_total_rewards (float): The average expected value for following the value iteration optimal policy.
-    pi_value_func (ndarray): The maximum value functiono for the optimal policy from policy iteration.
+    vi_total_rewards (float): The mean expected value for following the value iteration optimal policy.
+    pi_value_func (ndarray): The maximum value function for the optimal policy from policy iteration.
     pi_policy (ndarray): The optimal policy for policy iteration.
-    pi_total_rewards (float): The average expected value for following the policy iteration optimal policy.
+    pi_total_rewards (float): The mean expected value for following the policy iteration optimal policy.
     """
     raise NotImplementedError("Problem 5 Incomplete")
     

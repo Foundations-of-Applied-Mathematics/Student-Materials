@@ -136,7 +136,7 @@ class MovieGraph:
         separation between source and target.
 
         Returns:
-            (list): a shortest path from source to target, including endpoints.
+            (list): a shortest path from source to target, including endpoints and movies.
             (int): the number of steps from source to target, excluding movies.
         """
         raise NotImplementedError("Problem 5 Incomplete")

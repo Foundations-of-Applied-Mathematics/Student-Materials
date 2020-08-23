@@ -23,8 +23,8 @@ def calc_stopping(N):
 
 
 # Problem 2
-def graph_stopping_times(N):
-    """Graph the optimal stopping percentage of candidates to interview and 
+def graph_stopping_times(M):
+    """Graph the optimal stopping percentage of candidates to interview and
     the maximum probability against M.
 
     Parameters:

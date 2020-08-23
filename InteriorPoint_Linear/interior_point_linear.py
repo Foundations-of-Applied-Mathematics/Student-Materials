@@ -39,30 +39,29 @@ def starting_point(A, b, c):
     return x, lam, mu
 
 # Use this linear program generator to test your interior point method.
-def randomLP(m,n):
+def randomLP(j,k):
     """Generate a linear program min c^T x s.t. Ax = b, x>=0.
     First generate m feasible constraints, then add
     slack variables to convert it into the above form.
     Parameters:
-        m -- positive integer >= n, number of desired constraints
-        n -- dimension of space in which to optimize
+        j (int >= k): number of desired constraints.
+        k (int): dimension of space in which to optimize.
     Returns:
-        A -- array of shape (m,n+m)
-        b -- array of shape (m,)
-        c -- array of shape (n+m,), with m trailing 0s
-        v -- the solution to the LP
+        A ((j, j+k) ndarray): Constraint matrix.
+        b ((j,) ndarray): Constraint vector.
+        c ((j+k,), ndarray): Objective function with j trailing 0s.
+        x ((k,) ndarray): The first 'k' terms of the solution to the LP.
     """
-    A = np.random.random((m,n))*20 - 10
+    A = np.random.random((j,k))*20 - 10
     A[A[:,-1]<0] *= -1
-    v = np.random.random(n)*10
-    k = n
-    b = np.zeros(m)
-    b[:k] = A[:k,:].dot(v)
-    b[k:] = A[k:,:].dot(v) + np.random.random(m-k)*10
-    c = np.zeros(n+m)
-    c[:n] = A[:k,:].sum(axis=0)/k
-    A = np.hstack((A, np.eye(m)))
-    return A, b, -c, v
+    x = np.random.random(k)*10
+    b = np.zeros(j)
+    b[:k] = A[:k,:] @ x
+    b[k:] = A[k:,:] @ x + np.random.random(j-k)*10
+    c = np.zeros(j+k)
+    c[:k] = A[:k,:].sum(axis=0)/k
+    A = np.hstack((A, np.eye(j)))
+    return A, b, -c, x
 
 
 # Problems --------------------------------------------------------------------

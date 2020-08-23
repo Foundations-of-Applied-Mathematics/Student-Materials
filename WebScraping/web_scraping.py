@@ -6,42 +6,39 @@
 
 # Problem 1
 def prob1():
-    """Use the \li{requests} library to get the HTML source for the website 
-    \url{http://www.example.com}.
+    """Use the requests library to get the HTML source for the website 
+    http://www.example.com.
     Save the source as a file called example.html.
     If the file already exists, do not scrape the website or overwrite the file.
     """
     raise NotImplementedError("Problem 1 Incomplete")
     
 # Problem 2
-def prob2():
-    """Examine the source code of http://www.example.com. Determine the names
-    of the tags in the code and the value of the 'type' attribute associated
-    with the 'style' tag.
-
+def prob2(code):
+    """Return a list of the names of the tags in the given HTML code.
+    Parameters:
+        code (str): A string of html code
     Returns:
-        (set): A set of strings, each of which is the name of a tag.
-        (str): The value of the 'type' attribute in the 'style' tag.
-    """
+        (list): Names of all tags in the given code"""
     raise NotImplementedError("Problem 2 Incomplete")
 
 
 # Problem 3
-def prob3(code):
-    """Return a list of the names of the tags in the given HTML code."""
-    raise NotImplementedError("Problem 4 Incomplete")
+def prob3(filename="example.html"):
+    """Read the specified file and load it into BeautifulSoup. Return the
+    text of the first <a> tag and whether or not it has an href
+    attribute.
+    Parameters:
+        filename (str): Filename to open
+    Returns:
+        (str): text of first <a> tag
+        (bool): whether or not the tag has an 'href' attribute
+    """
+    raise NotImplementedError("Problem 3 Incomplete")
 
 
 # Problem 4
-def prob4(filename="example.html"):
-    """Read the specified file and load it into BeautifulSoup. Find the only
-    <a> tag with a hyperlink and return its text.
-    """
-    raise NotImplementedError("Problem 4 Incomplete")
-
-
-# Problem 5
-def prob5(filename="san_diego_weather.html"):
+def prob4(filename="san_diego_weather.html"):
     """Read the specified file and load it into BeautifulSoup. Return a list
     of the following tags:
 
@@ -53,11 +50,11 @@ def prob5(filename="san_diego_weather.html"):
     Returns:
         (list) A list of bs4.element.Tag objects (NOT text).
     """
-    raise NotImplementedError("Problem 5 Incomplete")
+    raise NotImplementedError("Problem 4 Incomplete")
 
 
-# Problem 6
-def prob6(filename="large_banks_index.html"):
+# Problem 5
+def prob5(filename="large_banks_index.html"):
     """Read the specified file and load it into BeautifulSoup. Return a list
     of the tags containing the links to bank data from September 30, 2003 to
     December 31, 2014, where the dates are in reverse chronological order.
@@ -65,11 +62,11 @@ def prob6(filename="large_banks_index.html"):
     Returns:
         (list): A list of bs4.element.Tag objects (NOT text).
     """
-    raise NotImplementedError("Problem 6 Incomplete")
+    raise NotImplementedError("Problem 5 Incomplete")
 
 
-# Problem 7
-def prob(filename="large_banks_data.html"):
+# Problem 6
+def prob6(filename="large_banks_data.html"):
     """Read the specified file and load it into BeautifulSoup. Create a single
     figure with two subplots:
 
@@ -78,4 +75,4 @@ def prob(filename="large_banks_data.html"):
 
     In the case of a tie, sort the banks alphabetically by name.
     """
-    raise NotImplementedError("Problem 7 Incomplete")
+    raise NotImplementedError("Problem 6 Incomplete")
