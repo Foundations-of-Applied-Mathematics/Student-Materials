@@ -36,7 +36,7 @@ def value_iteration(P, nS ,nA, beta = 1, tol=1e-8, maxiter=3000):
     """Perform Value Iteration according to the Bellman optimality principle.
 
     Parameters:
-        P (dict): The Markov relationship 
+        P (dict): The Markov relationship
                 (P[state][action] = [(prob, nextstate, reward, is_terminal)...]).
         nS (int): The number of states.
         nA (int): The number of actions.
@@ -55,7 +55,7 @@ def extract_policy(P, nS, nA, v, beta = 1.0):
     """Returns the optimal policy vector for value function v
 
     Parameters:
-        P (dict): The Markov relationship 
+        P (dict): The Markov relationship
                 (P[state][action] = [(prob, nextstate, reward, is_terminal)...]).
         nS (int): The number of states.
         nA (int): The number of actions.
@@ -66,20 +66,20 @@ def extract_policy(P, nS, nA, v, beta = 1.0):
         policy (ndarray): which direction to move in from each square.
     """
     raise NotImplementedError("Problem 2 Incomplete")
-    
+
 # Problem 3
 def compute_policy_v(P, nS, nA, policy, beta=1.0, tol=1e-8):
     """Computes the value function for a policy using policy evaluation.
-    
+
     Parameters:
-        P (dict): The Markov relationship 
+        P (dict): The Markov relationship
                 (P[state][action] = [(prob, nextstate, reward, is_terminal)...]).
         nS (int): The number of states.
         nA (int): The number of actions.
         policy (ndarray): The policy to estimate the value function.
         beta (float): The discount rate (between 0 and 1).
         tol (float): The stopping criteria for the value iteration.
-    
+
     Returns:
         v (ndarray): The discrete values for the true value function.
     """
@@ -90,7 +90,7 @@ def policy_iteration(P, nS, nA, beta=1, tol=1e-8, maxiter=200):
     """Perform Policy Iteration according to the Bellman optimality principle.
 
     Parameters:
-        P (dict): The Markov relationship 
+        P (dict): The Markov relationship
                 (P[state][action] = [(prob, nextstate, reward, is_terminal)...]).
         nS (int): The number of states.
         nA (int): The number of actions.
@@ -104,16 +104,16 @@ def policy_iteration(P, nS, nA, beta=1, tol=1e-8, maxiter=200):
         n (int): number of iterations
     """
     raise NotImplementedError("Problem 4 Incomplete")
-    
+
 # Problem 5 and 6
 def frozen_lake(basic_case=True, M=1000, render=False):
     """ Finds the optimal policy to solve the FrozenLake problem
-    
+
     Parameters:
-    basic_case (boolean): True for 4x4 and False for 8x8 environemtns. 
+    basic_case (boolean): True for 4x4 and False for 8x8 environemtns.
     M (int): The number of times to run the simulation using problem 6.
     render (boolean): Whether to draw the environment.
-    
+
     Returns:
     vi_policy (ndarray): The optimal policy for value iteration.
     vi_total_rewards (float): The mean expected value for following the value iteration optimal policy.
@@ -122,19 +122,18 @@ def frozen_lake(basic_case=True, M=1000, render=False):
     pi_total_rewards (float): The mean expected value for following the policy iteration optimal policy.
     """
     raise NotImplementedError("Problem 5 Incomplete")
-    
+
 # Problem 6
 def run_simulation(env, policy, render=True, beta = 1.0):
     """ Evaluates policy by using it to run a simulation and calculate the reward.
-    
+
     Parameters:
-    env (gym environment): The gym environment. 
+    env (gym environment): The gym environment.
     policy (ndarray): The policy used to simulate.
     beta float: The discount factor.
     render (boolean): Whether to draw the environment.
-    
+
     Returns:
     total reward (float): Value of the total reward received under policy.
     """
     raise NotImplementedError("Problem 6 Incomplete")
-
