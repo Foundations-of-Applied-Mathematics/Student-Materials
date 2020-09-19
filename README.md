@@ -70,6 +70,7 @@ If you use an academic email address (ending in `.edu`, etc.), you will get free
 On the Bitbucket page, click the **+** button from the menu on the left and, under **CREATE**, select **Repository**.
 Provide a name for the repository, mark the repository as **private**, and make sure the repository type is **Git**.
 For **Include a README?**, select **No** (if you accidentally include a README, delete the repository and start over).
+For **Include a .gitignore?**, select **No** (if you accidentally include a .gitignore, delete the repository and start over).
 Under **Advanced settings**, enter a short description for your repository, select **No forks** under forking, and select **Python** as the language.
 Finally, click the blue **Create repository** button.
 Take note of the URL of the webpage that is created; it should be something like `https://bitbucket.org/<name>/<repo>`.
