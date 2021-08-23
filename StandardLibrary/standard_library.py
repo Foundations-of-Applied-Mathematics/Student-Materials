@@ -25,8 +25,8 @@ def prob2():
 # Problem 3
 def hypot(a, b):
     """Calculate and return the length of the hypotenuse of a right triangle.
-    Do not use any functions other than those that are imported from your
-    'calculator' module.
+    Do not use any functions other than sum(), product() and sqrt that are 
+    imported from your 'calculator' module.
 
     Parameters:
         a: the length one of the sides of the triangle.

@@ -37,6 +37,27 @@ def prob2():
     raise NotImplementedError("Problem 2 Incomplete")
 
 
+# Helper function
+def reorder_eigvals(orig_eigvals, pert_eigvals):
+    """Reorder the perturbed eigenvalues to be as close to the original eigenvalues as possible.
+    
+    Parameters:
+        orig_eigvals ((n,) ndarray) - The eigenvalues of the unperturbed matrix A
+        pert_eigvals ((n,) ndarray) - The eigenvalues of the perturbed matrix A+H
+        
+    Returns:
+        ((n,) ndarray) - the reordered eigenvalues of the perturbed matrix
+    """
+    n = len(pert_eigvals)
+    sort_order = np.zeros(n).astype(int)
+    dists = np.abs(orig_eigvals - pert_eigvals.reshape(-1,1))
+    for _ in range(n):
+        index = np.unravel_index(np.argmin(dists), dists.shape)
+        sort_order[index[0]] = index[1]
+        dists[index[0],:] = np.inf
+        dists[:,index[1]] = np.inf
+    return pert_eigvals[sort_order]
+
 # Problem 3
 def eig_cond(A):
     """Approximate the condition numbers of the eigenvalue problem at A.

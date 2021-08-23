@@ -1,5 +1,5 @@
 # sql1.py
-"""Volume 3: SQL 1 (Introduction).
+"""Volume 1: SQL 1 (Introduction).
 <Name>
 <Class>
 <Date>

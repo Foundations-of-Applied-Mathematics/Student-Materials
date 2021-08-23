@@ -2,7 +2,7 @@
 # Download data files and place them in the lab folders.
 
 SOURCE="https://github.com/Foundations-of-Applied-Mathematics/Data.git"
-LABS=("BinaryTrees" "BreadthFirstSearch" "CVXPY_Intro" "Conditioning_Stability" "DataVisualization" "Differentiation" "DrazinInverse" "Exceptions_FileIO" "FacialRecognition" "FourierTransform" "GradientMethods" "ImageSegmentation" "InteriorPoint_Linear" "InteriorPoint_Quadratic" "LeastSquares_Eigenvalues" "LinearTransformations" "LinkedLists" "MarkovChains" "MatplotlibIntro" "NearestNeighbor" "NumpyIntro" "PageRank" "Pandas1" "Pandas2" "Pandas3" "Pandas4" "PolynomialInterpolation" "Profiling" "RegularExpressions" "SQL1" "SQL2" "SVD_ImageCompression" "Simplex" "Spark" "UnixShell1" "UnixShell2" "Wavelets" "WebScraping" "WebTechnologies")
+LABS=("BinaryTrees" "BreadthFirstSearch" "CVXPY_Intro" "Conditioning_Stability" "DataCleaning" "DataVisualization" "Differentiation" "DrazinInverse" "Ethics" "Exceptions_FileIO" "FacialRecognition" "FourierTransform" "GradientMethods" "ImageSegmentation" "InteriorPoint_Linear" "InteriorPoint_Quadratic" "LeastSquares_Eigenvalues" "LinearTransformations" "LinkedLists" "MarkovChains" "MatplotlibIntro" "NMF" "NearestNeighbor" "PageRank" "Pandas1" "Pandas2" "Pandas3" "Pandas4" "PolynomialInterpolation" "Profiling" "PythonAndNumpy2" "RegularExpressions" "SQL1" "SQL2" "SVD_ImageCompression" "Simplex" "Spark" "UnixShell1" "UnixShell2" "Wavelets" "WebScraping" "WebTechnologies")
 GIT="https://git-scm.com"
 TEMPDIR="_DATA_"`date +%s`"_"
 

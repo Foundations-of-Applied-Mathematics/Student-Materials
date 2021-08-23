@@ -1,5 +1,5 @@
 # solutions.py
-"""Volume 3: SQL 2.
+"""Volume 1: SQL 2.
 <Name>
 <Class>
 <Date>
@@ -45,7 +45,7 @@ def prob3(db_file="students.db"):
         db_file (str): the name of the database to connect to.
 
     Returns:
-        ((list): a list of strings, each of which is a course name.
+        (list): a list of strings, each of which is a course name.
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
