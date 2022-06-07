@@ -50,6 +50,7 @@ def random_walk(max_iters=1e12):
 
 
 # Problems 3 and 4: Write a 'ContentFilter' class.
+class ContentFilter(object):   
     """Class for reading in file
         
     Attributes:
@@ -57,7 +58,6 @@ def random_walk(max_iters=1e12):
         contents (str): the contents of the file
         
     """
-class ContentFilter(object):   
     # Problem 3
     def __init__(self, filename):
         """Read from the specified file. If the filename is invalid, prompt

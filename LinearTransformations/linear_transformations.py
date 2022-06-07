@@ -17,6 +17,8 @@ def stretch(A, a, b):
         A ((2,n) ndarray): Array containing points in R2 stored as columns.
         a (float): scaling factor in the x direction.
         b (float): scaling factor in the y direction.
+    Return:
+        ((2,n) ndarray): Transformed matrix
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
@@ -28,6 +30,8 @@ def shear(A, a, b):
         A ((2,n) ndarray): Array containing points in R2 stored as columns.
         a (float): scaling factor in the x direction.
         b (float): scaling factor in the y direction.
+    Return:
+        ((2,n) ndarray): Transformed matrix
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
@@ -39,6 +43,8 @@ def reflect(A, a, b):
         A ((2,n) ndarray): Array containing points in R2 stored as columns.
         a (float): x-coordinate of a point on the reflecting line.
         b (float): y-coordinate of the same point on the reflecting line.
+    Return:
+        ((2,n) ndarray): Transformed matrix
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
@@ -48,18 +54,20 @@ def rotate(A, theta):
     Parameters:
         A ((2,n) ndarray): Array containing points in R2 stored as columns.
         theta (float): The rotation angle in radians.
+    Return:
+        ((2,n) ndarray): Transformed matrix
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
 
 # Problem 2
-def solar_system(T, omega_e, omega_m):
+def solar_system(T, x_e, x_m, omega_e, omega_m):
     """Plot the trajectories of the earth and moon over the time interval [0,T]
     assuming the initial position of the earth is (x_e,0) and the initial
     position of the moon is (x_m,0).
 
     Parameters:
-        T (int): The final time.
+        T (float): The final time.
         x_e (float): The earth's initial x coordinate.
         x_m (float): The moon's initial x coordinate.
         omega_e (float): The earth's angular velocity.

@@ -7,7 +7,7 @@
 
 
 # Problem 1
-def golden_section(f, a, b, tol=1e-5, maxiter=15):
+def golden_section(f, a, b, tol=1e-5, maxiter=100):
     """Use the golden section search to minimize the unimodal function f.
 
     Parameters:
@@ -26,7 +26,7 @@ def golden_section(f, a, b, tol=1e-5, maxiter=15):
 
 
 # Problem 2
-def newton1d(df, d2f, x0, tol=1e-5, maxiter=15):
+def newton1d(df, d2f, x0, tol=1e-5, maxiter=100):
     """Use Newton's method to minimize a function f:R->R.
 
     Parameters:
@@ -41,11 +41,11 @@ def newton1d(df, d2f, x0, tol=1e-5, maxiter=15):
         (bool): Whether or not the algorithm converged.
         (int): The number of iterations computed.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    raise NotImplementedError("Problem 2 Incomplete")
 
 
 # Problem 3
-def secant1d(df, x0, x1, tol=1e-5, maxiter=15):
+def secant1d(df, x0, x1, tol=1e-5, maxiter=100):
     """Use the secant method to minimize a function f:R->R.
 
     Parameters:
@@ -60,7 +60,7 @@ def secant1d(df, x0, x1, tol=1e-5, maxiter=15):
         (bool): Whether or not the algorithm converged.
         (int): The number of iterations computed.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    raise NotImplementedError("Problem 3 Incomplete")
 
 
 # Problem 4
@@ -80,4 +80,4 @@ def backtracking(f, Df, x, p, alpha=1, rho=.9, c=1e-4):
     Returns:
         alpha (float): Optimal step size.
     """
-    raise NotImplementedError("Problem 1 Incomplete")
+    raise NotImplementedError("Problem 4 Incomplete")

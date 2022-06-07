@@ -1,5 +1,4 @@
-# solutions.py
-"""Volume 1: The SVD and Image Compression. Solutions File."""
+"""Volume 1: The SVD and Image Compression."""
 
 
 # Problem 1
