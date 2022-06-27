@@ -38,20 +38,6 @@ def prob2(db_file="students.db"):
 
 # Problem 3
 def prob3(db_file="students.db"):
-    """Query the database for the list of the names of courses that have at
-    least 5 students enrolled in them.
-
-    Parameters:
-        db_file (str): the name of the database to connect to.
-
-    Returns:
-        (list): a list of strings, each of which is a course name.
-    """
-    raise NotImplementedError("Problem 3 Incomplete")
-
-
-# Problem 4
-def prob4(db_file="students.db"):
     """Query the given database for tuples of the form (MajorName, N) where N
     is the number of students in the specified major. Sort the results in
     descending order by the counts N, then in alphabetic order by MajorName.
@@ -62,25 +48,11 @@ def prob4(db_file="students.db"):
     Returns:
         (list): the complete result set for the query.
     """
-    raise NotImplementedError("Problem 4 Incomplete")
+    raise NotImplementedError("Problem 3 Incomplete")
 
 
-# Problem 5
-def prob5(db_file="students.db"):
-    """Query the database for tuples of the form (StudentName, MajorName) where
-    the last name of the specified student begins with the letter C.
-
-    Parameters:
-        db_file (str): the name of the database to connect to.
-
-    Returns:
-        (list): the complete result set for the query.
-    """
-    raise NotImplementedError("Problem 5 Incomplete")
-
-
-# Problem 6
-def prob6(db_file="students.db"):
+# Problem 4
+def prob4(db_file="students.db"):
     """Query the database for tuples of the form (StudentName, N, GPA) where N
     is the number of courses that the specified student is in and 'GPA' is the
     grade point average of the specified student according to the following
@@ -98,4 +70,18 @@ def prob6(db_file="students.db"):
     Returns:
         (list): the complete result set for the query.
     """
-    raise NotImplementedError("Problem 6 Incomplete")
+    raise NotImplementedError("Problem 4 Incomplete")
+
+
+# Problem 5
+def prob5(db_file="mystery_database.db"):
+    """Use what you've learned about SQL to identify the outlier in the mystery
+    database.
+
+    Parameters:
+        db_file (str): the name of the database to connect to.
+
+    Returns:
+        (list): outlier's name, outlier's ID number, outlier's eye color, outlier's height
+    """
+    raise NotImplementedError("Problem 5 Incomplete")
