@@ -31,7 +31,7 @@ def prob3(N):
     """Define an expression for the Maclaurin series of e^x up to order N.
     Substitute in -y^2 for x to get a truncated Maclaurin series of e^(-y^2).
     Lambdify the resulting expression and plot the series on the domain
-    y in [-3,3]. Plot e^(-y^2) over the same domain for comparison.
+    y in [-2,2]. Plot e^(-y^2) over the same domain for comparison.
     """
     raise NotImplementedError("Problem 3 Incomplete")
 
@@ -70,8 +70,10 @@ def prob6():
 
         p(x) = 2*x^6 - 51*x^4 + 48*x^3 + 312*x^2 - 576*x - 100
 
-    Plot the polynomial and its critical points. Determine which points are
-    maxima and which are minima.
+    Plot the polynomial and its critical points over [-5,5]. Determine which
+    points are maxima and which are minima. Plot the maxima in one color and the
+    minima in another color. Return the minima and maxima (x values) as two
+    separate sets.
 
     Returns:
         (set): the local minima.
@@ -82,7 +84,7 @@ def prob6():
 
 # Problem 7
 def prob7():
-    """Calculate the integral of f(x,y,z) = (x^2 + y^2 + z^2)^2 over the
+    """Calculate the volume integral of f(x,y,z) = (x^2 + y^2 + z^2)^2 over the
     sphere of radius r. Lambdify the resulting expression and plot the integral
     value for r in [0,3]. Return the value of the integral when r = 2.
 
