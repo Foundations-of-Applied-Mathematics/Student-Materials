@@ -103,13 +103,13 @@ def cheb_poly(x, n):
     """Compute the nth Chebyshev polynomial at x.
 
     Parameters:
-        x (autograd.ndarray): the points to evaluate T_n(x) at.
+        x (jax.ndarray): the points to evaluate T_n(x) at.
         n (int): The degree of the polynomial.
     """
     raise NotImplementedError("Problem 6 Incomplete")
 
 def prob6():
-    """Use Autograd and cheb_poly() to create a function for the derivative
+    """Use JAX and cheb_poly() to create a function for the derivative
     of the Chebyshev polynomials, and use that function to plot the derivatives
     over the domain [-1,1] for n=0,1,2,3,4.
     """
@@ -118,21 +118,22 @@ def prob6():
 
 # Problem 7
 def prob7(N=200):
-    """Let f(x) = (sin(x) + 1)^sin(cos(x)). Perform the following experiment N
+    """
+    Let f(x) = (sin(x) + 1)^sin(cos(x)). Perform the following experiment N
     times:
 
         1. Choose a random value x0.
-        2. Use prob1() to calculate the “exact” value of f′(x0). Time how long
+        2. Use prob1() to calculate the "exact" value of f′(x0). Time how long
             the entire process takes, including calling prob1() (each
             iteration).
         3. Time how long it takes to get an approximation of f'(x0) using
             cdq4(). Record the absolute error of the approximation.
         4. Time how long it takes to get an approximation of f'(x0) using
-            Autograd (calling grad() every time). Record the absolute error of
+            JAX (calling grad() every time). Record the absolute error of
             the approximation.
 
     Plot the computation times versus the absolute errors on a log-log plot
-    with different colors for SymPy, the difference quotient, and Autograd.
+    with different colors for SymPy, the difference quotient, and JAX.
     For SymPy, assume an absolute error of 1e-18.
     """
     raise NotImplementedError("Problem 7 Incomplete")
