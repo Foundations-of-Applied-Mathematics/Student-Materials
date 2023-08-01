@@ -9,7 +9,9 @@ def isvalid(roll, remaining):
     exists a combination of the entries of 'remaining' that sum up to 'roll'.
 
     Parameters:
-        roll (int): The value of a dice roll, between 2 and 12 (inclusive).
+        roll (int): The value of a dice roll, between 1 and 12 (inclusive).
+            This can either be a roll of one die or a roll of two dice
+            depending on the remaining values.
         remaining (list): The list of the numbers that still need to be
             removed before the box can be shut.
 

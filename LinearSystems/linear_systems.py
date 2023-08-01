@@ -46,7 +46,7 @@ def solve(A, b):
         b ((n,) ndarray)
 
     Returns:
-        x ((m,) ndarray): The solution to the linear system.
+        x ((n,) ndarray): The solution to the linear system.
     """
     raise NotImplementedError("Problem 3 Incomplete")
 

@@ -1,5 +1,0 @@
-bitstring >= 3.1.7
-music21 >= 5.7.2
-numexpr >= 2.7.0
-pydataset >= 0.2.0
-pymongo >= 3.11.0

@@ -1,0 +1,49 @@
+# Versions last updated July, 2023
+
+notebook
+arviz <= 0.15.1
+bitstring <= 4.0.2
+beautifulsoup4 <= 4.12.2   # bs4
+colorama <= 0.4.6
+cvxopt <= 1.3.1
+cvxpy <= 1.3.1
+Cython <= 0.29.36
+findspark <= 2.0.1
+# ffmpeg is installed in install_dependencies.sh
+geopandas <= 0.13.2
+graphviz <= 0.20.1
+gymnasium <= 0.28.1
+hmmlearn <= 0.3.0
+imageio <= 2.31.1
+imblearn <= 0.0
+ipyparallel <= 8.6.1
+jax <= 0.4.13
+jaxlib <= 0.4.13
+librosa <= 0.10.0.post2
+matplotlib <= 3.6.3
+# mpi4py is installed in install_dependencies.sh
+music21 <= 9.1.0
+networkx <= 3.1
+nltk <= 3.8.1
+numba <= 0.57.1
+numpy <= 1.24.3
+pandas <= 2.0.2
+Pillow <= 9.5.0            # PIL
+pydataset <= 0.2.0
+pymc <= 5.5.0
+pymongo <= 4.4.0
+pyspark <= 3.4.1
+pytest <= 7.4.0
+PyQt6 <= 6.5.1
+PyWavelets <= 1.4.1    	   # pywt
+requests <= 2.31.0
+scipy <= 1.10.1
+seaborn <= 0.12.2
+selenium <= 4.10.0
+shapely <= 2.0.1
+scikit-learn <= 1.2.2      # sklearn
+statsmodels <= 0.14.0
+sympy <= 1.12
+torch <= 1.13.0
+torchvision <= 0.14.0
+tqdm <= 4.65.0

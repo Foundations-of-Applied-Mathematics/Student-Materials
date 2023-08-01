@@ -6,31 +6,36 @@
 """
 
 import numpy as np
-
+from scipy import sparse
 
 # Helper function
-def diag_dom(n, num_entries=None):
+def diag_dom(n, num_entries=None, as_sparse=False):
     """Generate a strictly diagonally dominant (n, n) matrix.
 
     Parameters:
         n (int): The dimension of the system.
         num_entries (int): The number of nonzero values.
             Defaults to n^(3/2)-n.
+        as_sparse: If True, an equivalent sparse CSR matrix is returned.
 
     Returns:
         A ((n,n) ndarray): A (n, n) strictly diagonally dominant matrix.
     """
     if num_entries is None:
-        num_entries = int(n**1.5) - n
-    A = np.zeros((n,n))
-    rows = np.random.choice(np.arange(0,n), size=num_entries)
-    cols = np.random.choice(np.arange(0,n), size=num_entries)
+    	num_entries = int(n**1.5) - n
+        
+    A = sparse.dok_matrix((n,n))
+    rows = np.random.choice(n, size=num_entries)
+    cols = np.random.choice(n, size=num_entries)
     data = np.random.randint(-4, 4, size=num_entries)
+
     for i in range(num_entries):
         A[rows[i], cols[i]] = data[i]
-    for i in range(n):
-        A[i,i] = np.sum(np.abs(A[i])) + 1
-    return A
+    B = A.tocsr()               # convert to row format for the next step
+    for i in range(n):    
+        A[i,i] = abs(B[i]).sum() + 1
+
+    return A.tocsr() if as_sparse else A.toarray()
 
 # Problems 1 and 2
 def jacobi(A, b, tol=1e-8, maxiter=100):

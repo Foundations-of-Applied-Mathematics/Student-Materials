@@ -68,7 +68,7 @@ def get_neighbors(index, radius, height, width):
     # Determine which candidates are within the given radius of the pixel.
     R = np.sqrt(((X - col)**2 + (Y - row)**2))
     mask = R < radius
-    return (X[mask] + Y[mask]*width).astype(np.int), R[mask]
+    return (X[mask] + Y[mask]*width).astype(int), R[mask]
 
 
 # Problems 3-6

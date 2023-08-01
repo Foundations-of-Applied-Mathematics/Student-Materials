@@ -74,7 +74,7 @@ def eat_cake(T, N, B, u=lambda x: np.sqrt(x)):
 # Problem 7
 def find_policy(T, N, B, u=np.sqrt):
     """Find the most optimal route to take assuming that we start with all of
-    the pieces. Show a graph of the optimal policy using graph_policy().
+    the pieces.
 
     Parameters:
         T (int): Time at which to end (T+1 intervals).
@@ -84,7 +84,7 @@ def find_policy(T, N, B, u=np.sqrt):
         u (function): Utility function.
 
     Returns:
-        ((T,) ndarray): The matrix describing the optimal percentage to
+        ((T+1,) ndarray): The matrix describing the optimal percentage to
             consume at each time.
     """
     raise NotImplementedError("Problem 7 Incomplete")
