@@ -1,7 +1,7 @@
 # iPyParallel - Intro to Parallel Programming
 
 # Problem 1
-def initialize():
+def prob1():
     """
     Write a function that initializes a Client object, creates a Direct
     View with all available engines, and imports scipy.sparse as sparse on
