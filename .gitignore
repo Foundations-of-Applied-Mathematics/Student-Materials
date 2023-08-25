@@ -22,6 +22,7 @@ DataVisualization\MLB.npy
 DataVisualization\earthquakes.npy
 DataVisualization\countries.npy
 Differentiation\plane.npy
+DrazinInverse\social_network.csv
 Exceptions_FileIO\hello_world.txt
 Exceptions_FileIO\cf_example1.txt
 Exceptions_FileIO\cf_example2.txt
@@ -56,6 +57,7 @@ InformationTheory\allowed_guesses.txt
 InformationTheory\possible_secret_words.txt
 InformationTheory\all_guess_results.npy.tar.gz
 InteriorPoint_Linear\simdata.txt
+InteriorPoint_Quadratic\portfolio.txt
 InverseProblem\measured_heat.npy
 KMeans\earthquake_coordinates.npy
 KMeans\nasa.zip
@@ -221,6 +223,7 @@ nyc_*.json
 london_crime*
 *.npz
 *.npy
+*.gpkg
 *.db
 RNN/mozart_sonatas/
 UnixShell1/Shell1/
