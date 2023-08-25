@@ -123,7 +123,7 @@ README.md             # This means README.md is in the working directory.
 
 # Connect this folder to the online repository.
 $ git init
-$ git remote add origin git@github.com/<username>/<repo>.git
+$ git remote add origin git@github.com:<username>/<repo>.git
 # Make sure the link has this form. If it starts with https, select the ssh option on GitHub instead.
 
 
