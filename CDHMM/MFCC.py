@@ -1,14 +1,12 @@
-from numpy import *
-from numpy.linalg import *
-from matplotlib.pyplot import *
+import numpy as np
 
-def hamming(n):
+def hamming_window(n):
     """
     Generate a hamming window of n points as a numpy array.
     """
-    return 0.54 - 0.46 * cos(2 * pi / n * (arange(n) + 0.5))
+    return 0.54 - 0.46 * np.cos(2 * np.pi / n * (np.arange(n) + 0.5))
 
-def melfb(p, n, fs):
+def mel_filterbank(p, n, fs):
     """
     Return a Mel filterbank matrix as a numpy array.
     Inputs:
@@ -18,18 +16,18 @@ def melfb(p, n, fs):
     Ref. http://www.ifp.illinois.edu/~minhdo/teaching/speaker_recognition/code/melfb.m
     """
     f0 = 700.0 / fs
-    fn2 = int(floor(n/2))
-    lr = log(1 + 0.5/f0) / (p+1)
-    CF = fs * f0 * (exp(arange(1, p+1) * lr) - 1)
-    bl = n * f0 * (exp(array([0, 1, p, p+1]) * lr) - 1)
-    b1 = int(floor(bl[0])) + 1
-    b2 = int(ceil(bl[1]))
-    b3 = int(floor(bl[2]))
-    b4 = min(fn2, int(ceil(bl[3]))) - 1
-    pf = log(1 + arange(b1,b4+1) / f0 / n) / lr
-    fp = floor(pf)
+    fn2 = int(np.floor(n/2))
+    lr = np.log(1 + 0.5/f0) / (p+1)
+    CF = fs * f0 * (np.exp(np.arange(1, p+1) * lr) - 1)
+    bl = n * f0 * (np.exp(np.array([0, 1, p, p+1]) * lr) - 1)
+    b1 = int(np.floor(bl[0])) + 1
+    b2 = int(np.ceil(bl[1]))
+    b3 = int(np.floor(bl[2]))
+    b4 = min(fn2, int(np.ceil(bl[3]))) - 1
+    pf = np.log(1 + np.arange(b1,b4+1) / f0 / n) / lr
+    fp = np.floor(pf)
     pm = pf - fp
-    M = zeros((p, 1+fn2))
+    M = np.zeros((p, 1+fn2))
     for c in range(b2-1,b4):
         r = int(fp[c] - 1)
         M[r,c+1] += 2 * (1 - pm[c])
@@ -38,39 +36,41 @@ def melfb(p, n, fs):
         M[r,c+1] += 2 * pm[c]
     return M, CF
 
-def dctmtx(n):
+def dct_matrix(bands, coefs):
     """
     Return the DCT-II matrix of order n as a numpy array.
     Calculating the DCT of an array using this matrix is
     equivalent to using scipy.fftpack.dct and then
     dividing by four.
     """
-    x,y = meshgrid(range(n), range(n))
-    D = sqrt(2.0/n) * cos(pi * (2*x+1) * y / (2*n))
-    D[0] /= sqrt(2)
+    x,y = np.meshgrid(range(bands), range(bands)[1:coefs+1])
+    D = np.sqrt(2.0/bands) * np.cos(np.pi * (2*x+1) * y / (2*bands))
+    D[0] /= np.sqrt(2)
     return D
 
+# These are computed once to save a bit inside the function.
+# Left as constants for simplicity of use for students, since 
+#   they never need to edit them.
 FS = 44100                              # Sampling rate
 FRAME_LEN = int(0.03 * FS)              # Frame length
 FRAME_SHIFT = int(0.01 * FS)            # Frame shift
 FFT_SIZE = 2048                         # How many points for FFT
-WINDOW = hamming(FRAME_LEN)             # Window function
+WINDOW = hamming_window(FRAME_LEN)             # Window function
 PRE_EMPH = 0.95                         # Pre-emphasis factor
 
 BANDS = 40                              # Number of Mel filters
 COEFS = 10                              # Number of Mel cepstra coefficients to keep
 POWER_SPECTRUM_FLOOR = 1e-100           # Flooring for the power to avoid log(0)
-M, CF = melfb(BANDS, FFT_SIZE, FS)      # The Mel filterbank matrix and the center frequencies of each band
-D = dctmtx(BANDS)[1:COEFS+1]            # The DCT matrix. Change the index to [0:COEFS] if you want to keep the 0-th coefficient
-invD = inv(dctmtx(BANDS))[:,1:COEFS+1]  # The inverse DCT matrix. Change the index to [0:COEFS] if you want to keep the 0-th coefficient
+M, CF = mel_filterbank(BANDS, FFT_SIZE, FS)      # The Mel filterbank matrix and the center frequencies of each band
+D = dct_matrix(BANDS, COEFS)            # The DCT matrix.
 
-def extract(x, show = False):
+def extract(x):
     """
     Extract MFCC coefficients of the sound x in numpy array format.
     """
     if x.ndim > 1:
-        print("INFO: Input signal has more than 1 channel; the channels will be averaged.")
-        x = mean(x, axis=1)
+        x = np.mean(x, axis=1)
+        
     frames = (len(x) - FRAME_LEN) // FRAME_SHIFT + 1
     feature = []
     for f in range(frames):
@@ -79,64 +79,17 @@ def extract(x, show = False):
         # Pre-emphasis
         frame[1:] -= frame[:-1] * PRE_EMPH
         # Power spectrum
-        X = abs(fft.fft(frame, FFT_SIZE)[:FFT_SIZE//2+1]) ** 2
+        X = np.abs(np.fft.fft(frame, FFT_SIZE)[:FFT_SIZE//2+1]) ** 2
         X[X < POWER_SPECTRUM_FLOOR] = POWER_SPECTRUM_FLOOR  # Avoid zero
         # Mel filtering, logarithm, DCT
-        X = dot(D, log(dot(M,X)))
+        X = D @ np.log(M@X)
         feature.append(X)
-    feature = row_stack(feature)
-    # Show the MFCC spectrum before normalization
-    if show:
-        figure().show()
-        subplot(2,1,2)
-        show_MFCC_spectrum(feature)
+    feature = np.row_stack(feature)
+    
     # Mean & variance normalization
     if feature.shape[0] > 1:
-
-        mu = mean(feature, axis=0)
-        sigma = std(feature, axis=0)
+        mu = np.mean(feature, axis=0)
+        sigma = np.std(feature, axis=0)
         feature = (feature - mu) / sigma
-    # Show the MFCC
-    if show:
-        subplot(2,1,1)
-        show_MFCC(feature)
-        draw()
+        
     return feature
-
-def show_MFCC(mfcc):
-    """
-    Show the MFCC as an image.
-    """
-    imshow(mfcc.T, aspect="auto", interpolation="none")
-    title("MFCC features")
-    xlabel("Frame")
-    ylabel("Dimension")
-
-def show_MFCC_spectrum(mfcc):
-    """
-    Show the spectrum reconstructed from MFCC as an image.
-    """
-    imshow(dot(invD, mfcc.T), aspect="auto", interpolation="none", origin="lower")
-    title("MFCC spectrum")
-    xlabel("Frame")
-    ylabel("Band")
-
-def plotmfb(M,CF):
-    N = M.shape[0]
-    T = M.shape[1]
-    v = 22050./T
-    for k in range(N):
-        i = nonzero(M[k,:])[0][0]
-        j = i + 1
-        m1 = (M[k,j] - M[k,i])/v
-        xzero1 = (0 - M[k,i])/m1 + i*v
-        i = nonzero(M[k,:])[0][-2]
-        j = i + 1
-        m2 = (M[k,j] - M[k,i])/v
-        xzero2 = (0 - M[k,i])/m2 + i*v
-        s1 = array([xzero1,CF[k],xzero2])
-        t1 = array([0.,2.,0.])
-        plot(s1,t1,'b-')
-    xlim([0,22050])
-    show()
-    return

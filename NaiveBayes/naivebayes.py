@@ -1,52 +1,49 @@
+"""Volume 3: Naive Bayes Classifiers."""
+
 import numpy as np
 import pandas as pd
 from scipy import stats
 from sklearn.base import ClassifierMixin
+from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 
-
-
 class NaiveBayesFilter(ClassifierMixin):
     '''
-    A Naive Bayes Classifier that sorts messages in to spam or ham.
+    A Naive Bayes Classifier that sorts messages into spam or ham.
     '''
-
-    def __init__(self):
-        return
-
+    # Problem 1
     def fit(self, X, y):
         '''
-        Create a table that will allow the filter to evaluate P(H), P(S)
-        and P(w|C)
+        Compute the values P(C=Ham), P(C=Spam), and P(x_i|C) to fit the model.
 
         Parameters:
             X (pd.Series): training data
             y (pd.Series): training labels
         '''
+        raise NotImplementedError("Problem 1 incomplete")
+        
+        return self
 
-        raise NotImplementedError('Problem 1 incomplete')
-
+    # Problem 2
     def predict_proba(self, X):
         '''
-        Find P(C=k|x) for each x in X and for each class k by computing
-        P(C=k)P(x|C=k)
+        Find ln(P(C=k,x)) for each x in X and for each class.
 
         Parameters:
             X (pd.Series)(N,): messages to classify
 
         Return:
-            (ndarray)(N,2): Probability each message is ham, spam
-                0 column is ham
-                1 column is spam
+            (ndarray)(N,2): Log probability each message is ham or spam.
+                Column 0 is ham, column 1 is spam.
         '''
+        raise NotImplementedError("Problem 2 incomplete")
 
-        raise NotImplementedError('Problem 2 incomplete')
-
+    # Problem 3
     def predict(self, X):
         '''
-        Use self.predict_proba to assign labels to X,
-        the label will be a string that is either 'spam' or 'ham'
+        Predict the labels of each row in X, using self.predict_proba().
+        The label will be a string that is either 'spam' or 'ham'.
 
         Parameters:
             X (pd.Series)(N,): messages to classify
@@ -54,88 +51,55 @@ class NaiveBayesFilter(ClassifierMixin):
         Return:
             (ndarray)(N,): label for each message
         '''
+        raise NotImplementedError("Problem 3 incomplete")
 
-        raise NotImplementedError('Problem 3 incomplete')
+def prob4():
+    """
+    Create a train-test split and use it to train a NaiveBayesFilter.
+    Predict the labels of the test set.
+    
+    Compute and return the following two values as a tuple:
+     - What proportion of the spam messages in the test set were correctly identified by the classifier?
+     - What proportion of the ham messages were incorrectly identified?
+    """
+    raise NotImplementedError("Problem 4 incomplete")
 
-    def predict_log_proba(self, X):
-        '''
-        Find ln(P(C=k|x)) for each x in X and for each class k
-
-        Parameters:
-            X (pd.Series)(N,): messages to classify
-
-        Return:
-            (ndarray)(N,2): Probability each message is ham, spam
-                0 column is ham
-                1 column is spam
-        '''
-
-        raise NotImplementedError('Problem 4 incomplete')
-
-
-    def predict_log(self, X):
-        '''
-        Use self.predict_log_proba to assign labels to X,
-        the label will be a string that is either 'spam' or 'ham'
-
-        Parameters:
-            X (pd.Series)(N,): messages to classify
-
-        Return:
-            (ndarray)(N,): label for each message
-        '''
-
-        raise NotImplementedError('Problem 4 incomplete')
-
-
+# Problem 5
 class PoissonBayesFilter(ClassifierMixin):
     '''
     A Naive Bayes Classifier that sorts messages in to spam or ham.
     This classifier assumes that words are distributed like
-    Poisson random variables
+    Poisson random variables.
     '''
-
-    def __init__(self):
-        return
-
-
     def fit(self, X, y):
         '''
-        Uses bayesian inference to find the poisson rate for each word
-        found in the training set. For this we will use the formulation
-        of l = rt since we have variable message lengths.
-
-        This method creates a tool that will allow the filter to
-        evaluate P(H), P(S), and P(w|C)
-
+        Compute the values P(C=Ham), P(C=Spam), and r_{i,k} to fit the model.
 
         Parameters:
             X (pd.Series): training data
             y (pd.Series): training labels
-
-        Returns:
-            self: this is an optional method to train
         '''
+        raise NotImplementedError("Problem 5 incomplete")
+        
+        return self
 
-        raise NotImplementedError('Problem 6 incomplete')
-
-    def predict_log_proba(self, X):
+    def predict_proba(self, X):
         '''
-        Find ln(P(C=k|x)) for each x in X and for each class
+        Find ln(P(C=k,x)) for each x in X and for each class.
 
         Parameters:
             X (pd.Series)(N,): messages to classify
 
         Return:
-            (ndarray)(N,2): Log probability each message is ham or spam
-                column 0 is ham, column 1 is spam
+            (ndarray)(N,2): Log probability each message is ham or spam.
+                Column 0 is ham, column 1 is spam.
         '''
-
-        raise NotImplementedError('Problem 7 incomplete')
+        raise NotImplementedError("Problem 5 incomplete")
 
     def predict(self, X):
         '''
-        Use self.predict_log_proba to assign labels to X
+        Predict the labels of each row in X, using self.predict_proba().
+        The label will be a string that is either 'spam' or 'ham'.
 
         Parameters:
             X (pd.Series)(N,): messages to classify
@@ -143,12 +107,21 @@ class PoissonBayesFilter(ClassifierMixin):
         Return:
             (ndarray)(N,): label for each message
         '''
+        raise NotImplementedError("Problem 5 incomplete")
 
-        raise NotImplementedError('Problem 7 incomplete')
-
-
-
-def sklearn_method(X_train, y_train, X_test):
+def prob6():
+    """
+    Create a train-test split and use it to train a PoissonBayesFilter.
+    Predict the labels of the test set.
+    
+    Compute and return the following two values as a tuple:
+     - What proportion of the spam messages in the test set were correctly identified by the classifier?
+     - What proportion of the ham messages were incorrectly identified?
+    """
+    raise NotImplementedError("Problem 6 incomplete")
+    
+# Problem 7
+def sklearn_naive_bayes(X_train, y_train, X_test):
     '''
     Use sklearn's methods to transform X_train and X_test, create a
     naïve Bayes filter, and classify the provided test set.
@@ -161,5 +134,4 @@ def sklearn_method(X_train, y_train, X_test):
     Returns:
         (ndarray): classification of X_test
     '''
-
-    raise NotImplementedError('Problem 8 incomplete')
+    raise NotImplementedError("Problem 7 incomplete")

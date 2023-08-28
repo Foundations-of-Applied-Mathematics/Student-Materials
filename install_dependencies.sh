@@ -9,6 +9,7 @@ if [[ $(uname) == "Darwin" ]]; then    # Mac Detected
 	brew install ffmpeg
 	brew install gcc
 	brew install cmake
+	brew install python-tk@3.10
 
 	pip3.10 install --upgrade pip
 	pip3.10 install --requirement requirements.txt
@@ -17,10 +18,12 @@ elif [[ $(uname) == "Linux" ]]; then   # WSL Detected
 	echo "WSL Detected"
 
 	# Make sure these are executed beforehand
-	#sudo apt-get install ffmpeg
+	#sudo apt-get install graphviz
 	#sudo apt-get install libopenmpi-dev
+	#sudo apt-get install ffmpeg
 	#sudo apt-get install g++
 	#sudo apt-get install python3-tk
+	#sudo apt-get install openjdk-8-jdk
 
 	pip install --upgrade pip
 	pip install --requirement requirements.txt

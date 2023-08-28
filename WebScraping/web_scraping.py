@@ -4,6 +4,12 @@
 <Date>
 """
 
+import re
+import requests
+from bs4 import BeautifulSoup
+from matplotlib import pyplot as plt
+import os.path
+
 # Problem 1
 def prob1():
     """Use the requests library to get the HTML source for the website 
