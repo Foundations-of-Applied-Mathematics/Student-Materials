@@ -53,9 +53,9 @@ If git is not already installed on your computer, download it with `sudo apt ins
 If you have never used git, you might want to read a few of the following resources.
 
 - [Official git tutorial](https://git-scm.com/docs/gittutorial)
-- [Bitbucket git tutorials](https://www.atlassian.com/git/tutorials)
 - [GitHub git cheat sheet](https://services.github.com/on-demand/downloads/github-git-cheat-sheet.pdf)
 - [GitLab git tutorial](https://docs.gitlab.com/ce/gitlab-basics/start-using-git.html)
+- [Bitbucket git tutorials](https://www.atlassian.com/git/tutorials)
 - [Codecademy git lesson](https://www.codecademy.com/learn/learn-git)
 - [Training video series by GitHub](https://www.youtube.com/playlist?list=PLg7s6cbtAD15G8lNyoaYDuKZSKyJrgwB-)
 
@@ -137,7 +137,7 @@ $ git commit -m "initial commit"
 $ git push origin main
 ```
 
-For example, if your Bitbucket username is `greek314`, the repository is called `acmev1`, and the folder is called `Student-Materials/` and is located in `Desktop`, you would enter the following commands:
+For example, if your GitHub username is `greek314`, the repository is called `acmev1`, and the folder is called `Student-Materials/` and is located in `Desktop`, you would enter the following commands:
 
 ```bash
 # Navigate to the folder.
