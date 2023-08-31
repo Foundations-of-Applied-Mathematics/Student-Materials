@@ -13,7 +13,7 @@ from networkx.drawing.nx_agraph import graphviz_layout
 class SinglyLinkedListNode:
     """A node with a value and a reference to the next node."""
     def __init__(self, data):
-        self.value, self.next = data, None
+        self.value, self.next = data, None 
 
 class SinglyLinkedList:
     """A singly linked list with a head and a tail."""

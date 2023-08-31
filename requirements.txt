@@ -1,6 +1,7 @@
 # Versions last updated July, 2023
 
 notebook
+jupyter
 arviz <= 0.15.1
 bitstring <= 4.0.2
 beautifulsoup4 <= 4.12.2   # bs4

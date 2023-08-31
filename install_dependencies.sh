@@ -17,13 +17,13 @@ if [[ $(uname) == "Darwin" ]]; then    # Mac Detected
 elif [[ $(uname) == "Linux" ]]; then   # WSL Detected
 	echo "WSL Detected"
 
-	# Make sure these are executed beforehand
-	#sudo apt-get install graphviz
-	#sudo apt-get install libopenmpi-dev
-	#sudo apt-get install ffmpeg
-	#sudo apt-get install g++
-	#sudo apt-get install python3-tk
-	#sudo apt-get install openjdk-8-jdk
+	# If these don't install, do it manually
+	sudo apt-get install graphviz
+	sudo apt-get install libopenmpi-dev
+	sudo apt-get install ffmpeg
+	sudo apt-get install g++
+	sudo apt-get install python3-tk
+	sudo apt-get install openjdk-8-jdk
 
 	pip install --upgrade pip
 	pip install --requirement requirements.txt
