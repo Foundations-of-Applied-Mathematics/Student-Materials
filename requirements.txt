@@ -40,7 +40,7 @@ pytest == 7.4.0
 pytest-cov == 4.1.0
 PyQt6 == 6.5.1
 PyWavelets == 1.4.1    	   # pywt
-requests == 2.31.0
+requests == 2.32.2
 scipy == 1.10.1
 seaborn == 0.12.2
 selenium == 4.10.0
