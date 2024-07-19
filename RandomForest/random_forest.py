@@ -64,12 +64,11 @@ def class_counts(data):
         formatted {label : number_of_samples} """
     if len(data.shape) == 1: # If there's only one row
         return {data[-1] : 1}
-    counts = {}
-    for label in data[:,-1]:
-        if label not in counts:
-            counts[label] = 0
-        counts[label] += 1
-    return counts
+    
+    # Create a dictionary  with unique values as keys and the counts as values
+    unique, counts = np.unique(data[:,-1], return_counts=True)
+    return dict(zip(unique, counts))
+
 
 # Helper function
 def info_gain(data, left, right):
@@ -183,7 +182,7 @@ def analyze_forest(dataset,forest):
 
 # Problem 7
 def prob7():
-    """ Using the file parkinsons.csv, return three tuples. For tuples 1 and 2,
+    """ Using the file parkinsons.csv, return three tuples of floats. For tuples 1 and 2,
         randomly select 130 samples; use 100 for training and 30 for testing.
         For tuple 3, use the entire dataset with an 80-20 train-test split.
         Tuple 1:
@@ -206,7 +205,7 @@ def draw_node(graph, my_tree):
     """Helper function for drawTree"""
     node_id = uuid4().hex
     #If it's a leaf, draw an oval and label with the prediction
-    if isinstance(my_tree, Leaf):
+    if hasattr(my_tree, "prediction"):
         graph.node(node_id, shape="oval", label="%s" % my_tree.prediction)
         return node_id
     else: #If it's not a leaf, make a question box
@@ -217,14 +216,14 @@ def draw_node(graph, my_tree):
         graph.edge(node_id, right_id, label="F")
         return node_id
 
-def draw_tree(my_tree, filename='Digraph', leaf_class=Leaf):
+def draw_tree(my_tree, filename='Digraph'):
     """Draws a tree"""
     # Remove the files if they already exist
     for file in [f'{filename}.gv',f'{filename}.gv.pdf']:
         if os.path.exists(file):
             os.remove(file)
     graph = graphviz.Digraph(comment="Decision Tree")
-    draw_node(graph, my_tree, leaf_class=leaf_class)
+    draw_node(graph, my_tree)
     # graph.render(view=True) #This saves Digraph.gv and Digraph.gv.pdf
     in_wsl = False
     in_wsl = 'microsoft-standard' in uname().release

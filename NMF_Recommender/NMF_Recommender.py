@@ -36,6 +36,8 @@ class NMFRecommender:
             V ((m,n) array): the array to decompose
             W ((m,k) array)
             H ((k,n) array)
+        Returns:
+            Frobenius norm of V - WH (float)
         """
         raise NotImplementedError("Problem incomplete")
 
@@ -88,7 +90,7 @@ def prob4(rank=2):
     Returns:
         W ((m,k) array)
         H ((k,n) array)
-        The number of people with higher component 2 than component 1 scores
+        The number of people with higher component 2 than component 1 scores (float)
     """
     V = np.array([[0,1,0,1,2,2],
                   [2,3,1,1,2,2],
@@ -120,7 +122,7 @@ def discover_weekly(userid, V):
         V ((m,n) array): the reconstructed array
         
     Returns:
-        recom (list): a list of strings that contains the names of the recommended artists
+        recom (list[str]): a list of strings that contains the names of the recommended artists
     """
     raise NotImplementedError("Problem incomplete")
     

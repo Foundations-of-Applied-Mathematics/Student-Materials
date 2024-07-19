@@ -6,6 +6,11 @@
 """
 
 import numpy as np
+from scipy import sparse
+from imageio.v3 import imread
+from scipy import linalg as la
+from scipy.sparse import linalg as spla
+from matplotlib import pyplot as plt
 
 
 # Problem 1
@@ -104,5 +109,3 @@ class ImageSegmenter:
 # if __name__ == '__main__':
 #     ImageSegmenter("dream_gray.png").segment()
 #     ImageSegmenter("dream.png").segment()
-#     ImageSegmenter("monument_gray.png").segment()
-#     ImageSegmenter("monument.png").segment()

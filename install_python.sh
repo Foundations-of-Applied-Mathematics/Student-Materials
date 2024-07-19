@@ -18,6 +18,8 @@ if [[ $(uname) == "Darwin" ]]; then     # Mac Detected
 
 elif [[ $(uname) == "Linux" ]]; then    # WSL Detected
 	echo "WSL Detected"
+    wsl.exe --install
+    wsl --update
 	sudo apt-get update && sudo apt-get upgrade
 	sudo apt install python3.10 python3-pip ipython3
 	alias python=python3

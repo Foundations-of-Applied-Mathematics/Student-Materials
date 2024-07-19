@@ -5,6 +5,7 @@
 <Date>
 """
 
+import numpy as np
 
 # Problem 1
 def steepest_descent(f, Df, x0, tol=1e-5, maxiter=100):

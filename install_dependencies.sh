@@ -18,12 +18,13 @@ elif [[ $(uname) == "Linux" ]]; then   # WSL Detected
 	echo "WSL Detected"
 
 	# If these don't install, do it manually
-	sudo apt-get install graphviz
-	sudo apt-get install libopenmpi-dev
-	sudo apt-get install ffmpeg
-	sudo apt-get install g++
-	sudo apt-get install python3-tk
-	sudo apt-get install openjdk-8-jdk
+	sudo apt install -y graphviz
+	sudo apt install -y libopenmpi-dev
+	sudo apt install -y ffmpeg
+	sudo apt install -y g++
+	sudo apt install -y python3-tk
+	sudo apt install -y openjdk-8-jdk
+	sudo apt install -y unzip
 
 	pip install --upgrade pip
 	pip install --requirement requirements.txt

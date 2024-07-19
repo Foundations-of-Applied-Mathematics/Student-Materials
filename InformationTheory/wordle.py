@@ -34,7 +34,7 @@ class WordleGame:
             # Validate the word
             if len(word) != 5:
                 raise ValueError("Word must be 5 characters long")
-            if word not in self.allowed_words:
+            if word not in self.possible_words:
                 raise ValueError('Word must be in the list of possible words')
         self.word = word
         self.display = display
@@ -100,9 +100,9 @@ class WordleGame:
         # Output things, complete with color
         if self.display:
             output_chars = (' ','-','+')
-            output_colors = (Fore.WHITE + Style.DIM,
-                            Fore.YELLOW + Style.NORMAL,
-                            Fore.GREEN + Style.BRIGHT)
+            output_colors = (Style.RESET_ALL + Fore.WHITE + Style.DIM,
+                            Style.RESET_ALL + Fore.YELLOW + Style.NORMAL,
+                            Style.RESET_ALL + Fore.GREEN + Style.BRIGHT)
             top_str = ""
             mid_str = ""
             for r,char in zip(result,guess):

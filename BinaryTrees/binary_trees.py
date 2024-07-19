@@ -7,6 +7,7 @@
 
 # These imports are used in BST.draw().
 import networkx as nx
+from matplotlib import pyplot as plt
 from networkx.drawing.nx_agraph import graphviz_layout
 
 

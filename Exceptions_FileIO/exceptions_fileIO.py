@@ -69,14 +69,14 @@ class ContentFilter(object):
         """ Raise a ValueError if the mode is invalid. """
 
     def uniform(self, outfile, mode='w', case='upper'):
-        """ Write the data to the outfile with uniform case. Include an additional
+        """ Write the data to the outfile with uniform case. Include a
         keyword argument case that defaults to "upper". If case="upper", write
         the data in upper case. If case="lower", write the data in lower case.
         If case is not one of these two values, raise a ValueError. """
 
 
-    def reverse(self, outfile, mode='w', unit='word'):
-        """ Write the data to the outfile in reverse order. Include an additional
+    def reverse(self, outfile, mode='w', unit='line'):
+        """ Write the data to the outfile in reverse order. Include a
         keyword argument unit that defaults to "line". If unit="word", reverse
         the ordering of the words in each line, but write the lines in the same
         order as the original file. If units="line", reverse the ordering of the

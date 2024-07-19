@@ -5,11 +5,6 @@
 <Date>
 """
 
-# (Optional) Import functions from your QR Decomposition lab.
-# import sys
-# sys.path.insert(1, "../QR_Decomposition")
-# from qr_decomposition import qr_gram_schmidt, qr_householder, hessenberg
-
 import numpy as np
 from matplotlib import pyplot as plt
 

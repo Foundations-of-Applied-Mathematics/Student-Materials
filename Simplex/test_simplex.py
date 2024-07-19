@@ -1,6 +1,6 @@
 """Unit testing file for the Simplex lab"""
 
-import solutions as simplex
+import simplex
 import pytest
 import numpy as np
 

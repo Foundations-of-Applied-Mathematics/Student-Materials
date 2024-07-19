@@ -14,7 +14,7 @@ def prob1(A):
 
     Example:
         >>> A = np.array([-3,-1,3])
-        >>> prob4(A)
+        >>> prob1(A)
         array([0, 0, 3])
     """
     raise NotImplementedError("Problem 1 Incomplete")
@@ -45,7 +45,7 @@ def prob4(A):
 
     Example:
         >>> A = np.array([[1,1,0],[0,1,0],[1,1,1]])
-        >>> prob6(A)
+        >>> prob4(A)
         array([[ 0.5       ,  0.5       ,  0.        ],
                [ 0.        ,  1.        ,  0.        ],
                [ 0.33333333,  0.33333333,  0.33333333]])
@@ -109,24 +109,27 @@ def prob5(arr,naive=False):
     
     Example:
         >>> A = np.array([15, 41, 49, 1077])
-        >>> prob4(A)
+        >>> prob5(A)
         array([5,41,7,359])
     """
     raise NotImplementedError("Problem 5 Incomplete")
 
 
-def prob6(x,y,z,A,optimize=False,split=True):
-    """takes three vectors and a matrix and performs 
-    (np.outer(x,y)*z.reshape(-1,1))@A on them using einsum."""
+def prob6(x,y,z,A,split=False):
+    """Takes three vectors and a matrix and performs 
+    (np.outer(x,y)*z.reshape(-1,1))@A on them using einsum.
+    If split=True, then the einsum operations should be performed
+    one at a time. Otherwise, they should be performed using multiple
+    operations at once while using optimize=True. """
     raise NotImplementedError("Problem 6 part 1 Incomplete")
 
 def naive6(x,y,z,A):
-    """uses normal numpy functions to do what prob5 does"""
+    """Uses normal numpy functions to do what prob6() does."""
     raise NotImplementedError("Problem 6 part 2 Incomplete")
 
 def prob7():
-    """Times and creates plots that generate the difference in
-    speeds between einsum and normal numpy functions
+    """Times and generates a plot that compares the difference in
+    speeds between Einsum operations and NumPy.
     """
     raise NotImplementedError("Problem 7 Incomplete")
 

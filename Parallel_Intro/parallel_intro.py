@@ -10,16 +10,7 @@ def prob1():
     raise NotImplementedError("Problem 1 incomplete")
 
 # Problem 2
-def variables(dx):
-    """
-    Write a function variables(dx) that accepts a dictionary of variables. Create
-    a Client object and a DirectView and distribute the variables. Pull the variables back and
-    make sure they haven't changed. Remember to include blocking.
-    """
-    raise NotImplementedError("Problem 2 incomplete")
-
-# Problem 3
-def prob3(n=1000000):
+def prob2(n=1000000):
     """
     Write a function that accepts an integer n.
     Instruct each engine to make n draws from the standard normal
@@ -34,21 +25,21 @@ def prob3(n=1000000):
         mins (list of float): the minimum draws of each engine
         maxs (list of float): the maximum draws of each engine.
     """
-    raise NotImplementedError("Problem 3 incomplete")
+    raise NotImplementedError("Problem 2 incomplete")
 
-# Problem 4
-def prob4():
+# Problem 3
+def prob3():
     """
     Time the process from the previous problem in parallel and serially for
     n = 1000000, 5000000, 10000000, and 15000000. To time in parallel, use
-    your function from problem 3 . To time the process serially, run the drawing
+    your function from problem 2 . To time the process serially, run the drawing
     function in a for loop N times, where N is the number of engines on your machine.
     Plot the execution times against n.
     """
-    raise NotImplementedError("Problem 4 incomplete")
+    raise NotImplementedError("Problem 3 incomplete")
 
-# Problem 5
-def parallel_trapezoidal_rule(f, a, b, n=200):
+# Problem 4
+def parallel_trapezoid_rule(f, a, b, n=200):
     """
     Write a function that accepts a function handle, f, bounds of integration,
     a and b, and a number of points to use, n. Split the interval of
@@ -64,4 +55,4 @@ def parallel_trapezoidal_rule(f, a, b, n=200):
         value (float): the approximate integral calculated by the
             trapezoidal rule
     """
-    raise NotImplementedError("Problem 5 incomplete")
+    raise NotImplementedError("Problem 4 incomplete")
