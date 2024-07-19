@@ -34,7 +34,7 @@ Pillow == 9.5.0            # PIL
 pydataset == 0.2.0
 pygame == 2.5.2
 pymc == 5.5.0
-pymongo == 4.4.0
+pymongo == 4.6.3
 pyspark == 3.4.1
 pytest == 7.4.0
 pytest-cov == 4.1.0
