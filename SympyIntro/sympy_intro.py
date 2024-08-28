@@ -5,6 +5,9 @@
 <Date>
 """
 
+import sympy as sy
+import numpy as np
+from matplotlib import pyplot as plt
 
 # Problem 1
 def prob1():

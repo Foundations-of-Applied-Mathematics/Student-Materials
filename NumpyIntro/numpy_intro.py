@@ -5,6 +5,8 @@
 <Date>
 """
 
+import numpy as np
+
 
 def prob1():
     """ Define the matrices A and B as arrays. Return the matrix product AB. """

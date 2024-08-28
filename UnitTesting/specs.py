@@ -5,6 +5,9 @@
 <Date>
 """
 
+from itertools import combinations
+
+
 def add(a, b):
     """Add two numbers."""
     return a + b
@@ -69,7 +72,7 @@ class Fraction(object):
         elif type(numerator) is not int or type(denominator) is not int:
             raise TypeError("numerator and denominator must be integers")
 
-        def gcd(a,b):
+        def gcd(a, b):
             while b != 0:
                 a, b = b, a % b
             return a
@@ -88,7 +91,7 @@ class Fraction(object):
 
     def __eq__(self, other):
         if type(other) is Fraction:
-            return self.numer==other.numer and self.denom==other.denom
+            return self.numer == other.numer and self.denom == other.denom
         else:
             return float(self) == other
 

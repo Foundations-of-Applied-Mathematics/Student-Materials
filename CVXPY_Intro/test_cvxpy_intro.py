@@ -2,7 +2,6 @@
 
 
 import cvxpy_intro
-import pytest
 import numpy as np
 
 def test_prob5():
@@ -15,7 +14,7 @@ def test_l1Min():
     # Sets up the matrix and vector
     A = np.array([[1, 2, 1, 1],
                  [0, 3, -2, -1]])
-    b = np.array([7,4])
+    b = np.array([7, 4])
 
     # Runs the l1Min function on the matrix and vector
     x, ans = cvxpy_intro.l1Min(A, b)

@@ -5,6 +5,8 @@
 <Date>
 """
 
+from math import sqrt
+
 
 # Problem 1
 def golden_section(f, a, b, tol=1e-5, maxiter=100):

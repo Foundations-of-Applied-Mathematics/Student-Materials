@@ -14,16 +14,18 @@ if [[ $(uname) == "Darwin" ]]; then     # Mac Detected
 	echo 'alias pip="pip3.10"' >> ~/.zshrc
 	echo 'alias ipython="ipython3"' >> ~/.zshrc
 
+	# Prevent pip from installing packages unless it's in a virtual environment.
+	python3 -m pip config set global.require-virtualenv True
+
 	source ~/.zshrc
 
 elif [[ $(uname) == "Linux" ]]; then    # WSL Detected
 	echo "WSL Detected"
-    wsl.exe --install
-    wsl --update
+	
 	sudo apt-get update && sudo apt-get upgrade
-	sudo apt install python3.10 python3-pip ipython3
-	alias python=python3
-	alias pip=pip3
-	alias ipython=ipython3
+	sudo apt install python3.10 python3-pip ipython3 python3.10-venv
 	sudo apt install python-is-python3
+
+	# Prevent pip from installing packages unless it's in a virtual environment.
+	python -m pip config set global.require-virtualenv True
 fi

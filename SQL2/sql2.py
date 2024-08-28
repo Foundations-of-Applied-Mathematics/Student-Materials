@@ -1,9 +1,10 @@
-# solutions.py
 """Volume 1: SQL 2.
 <Name>
 <Class>
 <Date>
 """
+
+import sqlite3 as sql
 
 
 # Problem 1

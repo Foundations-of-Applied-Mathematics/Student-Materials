@@ -1,6 +1,3 @@
-# solutions.py
-
-import pyspark
 from pyspark.sql import SparkSession
 import numpy as np
 import numpy.linalg as la
@@ -8,9 +5,8 @@ import matplotlib.pyplot as plt
 from pyspark.ml import Pipeline
 from pyspark.ml.feature import VectorAssembler, StringIndexer, OneHotEncoder
 from pyspark.ml.tuning import ParamGridBuilder, TrainValidationSplit
-from pyspark.ml.classification import RandomForestClassifier
+from pyspark.ml.classification import LogisticRegression
 from pyspark.ml.evaluation import MulticlassClassificationEvaluator as MCE
-
 
 
 # --------------------- Resilient Distributed Datasets --------------------- #

@@ -5,6 +5,10 @@
 <Date>
 """
 
+import csv
+import numpy as np
+import sqlite3 as sql
+from matplotlib import pyplot as plt
 
 # Problems 1, 2, and 4
 def student_db(db_file="students.db", student_info="student_info.csv",

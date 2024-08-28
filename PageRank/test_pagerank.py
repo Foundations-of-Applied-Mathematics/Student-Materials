@@ -2,7 +2,6 @@
 
 
 import pagerank
-import pytest
 import numpy as np
 
 def test_prob2():
@@ -13,13 +12,13 @@ def test_prob2():
 
 def test_linsolve():
     # Sets up the matrix in the example.
-    A = np.array([[0,0,0,0],
-                  [1,0,1,0],
-                  [1,0,0,1],
-                  [1,0,1,0]])
+    A = np.array([[0, 0, 0, 0],
+                  [1, 0, 1, 0],
+                  [1, 0, 0, 1],
+                  [1, 0, 1, 0]])
     
     # Sets up the class to be used for the pagerank
-    dg1 = pagerank.DiGraph(A, labels = ["a", "b", "c", "d"])
+    dg1 = pagerank.DiGraph(A, labels=["a", "b", "c", "d"])
 
     # Finds the p vector.
     p = np.array(list(dg1.linsolve().values()))

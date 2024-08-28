@@ -5,6 +5,10 @@
 <Date>
 """
 
+import numpy as np
+from scipy import stats
+from matplotlib import pyplot as plt
+
 
 # Problem 1
 def ball_volume(n, N=10000):

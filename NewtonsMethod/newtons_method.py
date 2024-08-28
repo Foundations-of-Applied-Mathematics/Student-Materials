@@ -5,6 +5,9 @@
 <Date>
 """
 
+import numpy as np
+import scipy.linalg as la
+from matplotlib import pyplot as plt
 
 # Problems 1, 3, and 5
 def newton(f, x0, Df, tol=1e-5, maxiter=15, alpha=1.):

@@ -11,13 +11,23 @@ if [[ $(uname) == "Darwin" ]]; then    # Mac Detected
 	brew install cmake
 	brew install python-tk@3.10
 
-	pip3.10 install --upgrade pip
-	pip3.10 install --requirement requirements.txt
+	# If we are not in a virtual environment, IN_VENV is 0. If we are, IN_VENV is 1.
+	# When an environment is activtated, `sys.prefix` becomes the folder that houses the environment (e.g., .venv).
+	# `sys.base_prefix` is the folder where the base Python executable is located.
+	IN_VENV=$( python -c 'import sys ; print( 0 if sys.prefix == sys.base_prefix else 1 )' )
+	if [[ $IN_VENV == 1 ]]; then
+		# Inside virtual environment.
+		python -m pip install --upgrade pip
+		python -m pip install --requirement requirements.txt
+		
+		printf "\nPython dependencies successfully installed!\n"
+	else
+		printf "\nNot inside virtual environment.\nActivate environment, then run this script again.\n"
+	fi
 
 elif [[ $(uname) == "Linux" ]]; then   # WSL Detected
 	echo "WSL Detected"
 
-	# If these don't install, do it manually
 	sudo apt install -y graphviz
 	sudo apt install -y libopenmpi-dev
 	sudo apt install -y ffmpeg
@@ -26,7 +36,18 @@ elif [[ $(uname) == "Linux" ]]; then   # WSL Detected
 	sudo apt install -y openjdk-8-jdk
 	sudo apt install -y unzip
 
-	pip install --upgrade pip
-	pip install --requirement requirements.txt
-	pip install mpi4py              # Latest Version = 3.1.4
+	# If we are not in a virtual environment, IN_VENV is 0. If we are, IN_VENV is 1.
+	# When an environment is activtated, `sys.prefix` becomes the folder that houses the environment (e.g., .venv).
+	# `sys.base_prefix` is the folder where the base Python executable is located.
+	IN_VENV=$( python -c 'import sys ; print( 0 if sys.prefix == sys.base_prefix else 1 )' )
+	if [[ $IN_VENV == 1 ]]; then
+		# Inside virtual environment.
+		python -m pip install --upgrade pip
+		python -m pip install --requirement requirements.txt
+		python -m pip install mpi4py              # Latest Version = 3.1.4
+
+		printf "\nPython dependencies successfully installed!\n"
+	else
+		printf "\nNot inside virtual environment.\nActivate environment, then run this script again.\n"
+	fi
 fi

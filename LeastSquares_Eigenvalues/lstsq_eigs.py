@@ -6,6 +6,8 @@
 """
 
 import numpy as np
+from cmath import sqrt
+from scipy import linalg as la
 from matplotlib import pyplot as plt
 
 

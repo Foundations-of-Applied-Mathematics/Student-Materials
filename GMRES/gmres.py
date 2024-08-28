@@ -5,6 +5,11 @@
 <Date>
 """
 
+import time
+import numpy as np
+from scipy import linalg as la
+from matplotlib import pyplot as plt
+from scipy.sparse import linalg as spla
 
 # Problems 1 and 2.
 def gmres(A, b, x0, k=100, tol=1e-8, plot=False):

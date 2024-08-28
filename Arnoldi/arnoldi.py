@@ -5,6 +5,14 @@
 <Date>
 """
 
+import numpy as np
+from numpy.random import rand
+from scipy.linalg import eig
+from cmath import sqrt
+from scipy.fftpack import fft
+from scipy import sparse as ss
+from scipy.sparse.linalg import eigsh
+from matplotlib import pyplot as plt
 
 # Problem 1
 def arnoldi(b, L, k, tol=1E-8):
@@ -49,7 +57,7 @@ def ritz(L, dim, k, n):
         L (function): A function describing a linear operator on R^(dim).
         dim (int): The dimension of the space that L operates on.
         k (int): The number of times to perform the Arnoldi iteration.
-        		Must be between k and dim.
+                Must be between k and dim.
         n (int): The number of Ritz values to return.
 
     Returns:

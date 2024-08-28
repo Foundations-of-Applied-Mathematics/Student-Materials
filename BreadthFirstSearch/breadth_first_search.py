@@ -5,6 +5,10 @@
 <Date>
 """
 
+import networkx as nx
+from numpy import mean
+from collections import deque
+from matplotlib import pyplot as plt
 
 # Problems 1-3
 class Graph:

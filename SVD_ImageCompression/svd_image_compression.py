@@ -5,7 +5,6 @@ from imageio.v3 import imread
 from scipy import linalg as la
 from matplotlib import pyplot as plt
 
-
 # Problem 1
 def compact_svd(A, tol=1e-6):
     """Compute the truncated SVD of A.

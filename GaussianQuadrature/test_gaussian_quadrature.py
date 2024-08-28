@@ -18,11 +18,11 @@ def test_init():
     assert (gauss2.w_inv(input_value) == np.sqrt(1-input_value**2))
 
     # Test giving invalid polytype
-    with pytest.raises(ValueError) as error:
-        gauss3 = gaussian_quadrature.GaussianQuadrature(1, 'Legendre')
+    with pytest.raises(ValueError):
+        gaussian_quadrature.GaussianQuadrature(1, 'Legendre')
 
-    with pytest.raises(ValueError) as error:
-        gauss4 = gaussian_quadrature.GaussianQuadrature(20, 'invalid')
+    with pytest.raises(ValueError):
+        gaussian_quadrature.GaussianQuadrature(20, 'invalid')
 
 
 def test_point_weights():

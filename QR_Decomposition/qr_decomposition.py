@@ -5,6 +5,9 @@
 <Date>
 """
 
+import numpy as np
+from scipy import linalg as la
+
 
 # Problem 1
 def qr_gram_schmidt(A):

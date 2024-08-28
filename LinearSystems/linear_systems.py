@@ -5,6 +5,13 @@
 <Date>
 """
 
+import numpy as np
+from time import perf_counter as time
+from scipy import sparse
+from scipy import linalg as la
+from scipy.sparse import linalg as spla
+from matplotlib import pyplot as plt
+
 
 # Problem 1
 def ref(A):

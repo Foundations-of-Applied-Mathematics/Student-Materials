@@ -5,6 +5,8 @@
 <Date>
 """
 
+import re
+
 # Problem 1
 def prob1():
     """Compile and return a regular expression pattern object with the

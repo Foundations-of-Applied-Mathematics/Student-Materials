@@ -7,6 +7,8 @@
 
 import numpy as np
 from scipy import linalg as la
+from matplotlib import pyplot as plt
+from cvxopt import matrix, solvers
 from scipy.sparse import spdiags
 
 
@@ -23,12 +25,12 @@ def startingPoint(G, c, A, b, guess):
     Returns:
         a tuple of arrays (x0, y0, l0) of lengths n, m, and m, resp.
     """
-    m,n = A.shape
+    m, n = A.shape
     x0, y0, l0 = guess
 
     # Initialize linear system
     N = np.zeros((n+m+m, n+m+m))
-    N[:n,:n] = G
+    N[:n, :n] = G
     N[:n, n+m:] = -A.T
     N[n:n+m, :n] = A
     N[n:n+m, n:n+m] = -np.eye(m)
@@ -40,7 +42,6 @@ def startingPoint(G, c, A, b, guess):
     rhs[n+m:] = -(y0*l0)
 
     sol = la.solve(N, rhs)
-    dx = sol[:n]
     dy = sol[n:n+m]
     dl = sol[n+m:]
 
@@ -75,7 +76,7 @@ def qInteriorPoint(Q, c, A, b, guess, niter=20, tol=1e-16, verbose=False):
 def laplacian(n):
     """Construct the discrete Dirichlet energy matrix H for an n x n grid."""
     data = -1*np.ones((5, n**2))
-    data[2,:] = 4
+    data[2, :] = 4
     data[1, n-1::n] = 0
     data[3, ::n] = 0
     diags = np.array([-n, -1, 0, 1, n])

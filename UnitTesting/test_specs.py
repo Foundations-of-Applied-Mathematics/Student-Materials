@@ -15,8 +15,8 @@ def test_add():
     assert specs.add(-6, 14) == 8
 
 def test_divide():
-    assert specs.divide(4,2) == 2, "integer division"
-    assert specs.divide(5,4) == 1.25, "float division"
+    assert specs.divide(4, 2) == 2, "integer division"
+    assert specs.divide(5, 4) == 1.25, "float division"
     with pytest.raises(ZeroDivisionError) as excinfo:
         specs.divide(4, 0)
     assert excinfo.value.args[0] == "second input cannot be zero"

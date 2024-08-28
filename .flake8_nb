@@ -1,0 +1,30 @@
+[flake8_nb]
+# Files to exclude when linting
+exclude = .git,__pycache__
+
+
+# See https://flake8.pycqa.org/en/latest/user/error-codes.html for a list of error codes.
+# Below are just a few selected for relevance to ACME.
+# Each lab can have their own .flake8 file, but this is just a template.
+select=
+    # F401: unused imports
+    F401,
+    # F841: unused variables
+    F841,
+    # E101: Mixed spaces and tabs in indentation
+    E101,
+    # E111: Indentation must be 4 spaces
+    E111,
+    # E115,E116: Proper indentation of comments
+    E115,E116,
+    # E201,E202,E203,E211: Undesired whitespace after '(', before ')', before ',',';',':','('
+    E201,E202,E203,E211,
+    # E225 missing whitespace around operator
+    E225,
+    # E231 missing whitespace after ',',';',':'
+    E231,
+    # E251 unexpected spaces around keyword/parameter equals
+    E251,
+    # E262 inline comment should have space after #
+    E262
+

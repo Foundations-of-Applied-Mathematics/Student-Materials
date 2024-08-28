@@ -1,8 +1,6 @@
 """Unit testing file for Interior Point (Linear) Lab"""
 
 
-import interior_point_linear
-import pytest
 
 def test_interiorPoint():
     """

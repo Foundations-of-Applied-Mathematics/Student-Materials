@@ -6,6 +6,7 @@
 """
 import numpy as np
 from sympy import isprime
+import time as tm
 from matplotlib import pyplot as plt
 
 def prob1(A):
@@ -53,7 +54,7 @@ def prob4(A):
     raise NotImplementedError("Problem 4 Incomplete")
     
 # this is provided for problem 5    
-def LargestPrime(x,show_factorization=False):
+def LargestPrime(x, show_factorization=False):
     # account for edge cases.
     if x == 0 or x == 1:
         return np.nan
@@ -61,12 +62,12 @@ def LargestPrime(x,show_factorization=False):
     # create needed variables
     forced_break = False
     prime_factors = [] # place to store factors of number
-    factor_test_arr = np.arange(1,11)
+    factor_test_arr = np.arange(1, 11)
     
     while True:
         # a factor is never more than half the number
         if np.min(factor_test_arr) > (x//2)+1:
-            forced_break=True
+            forced_break = True
             break
         if isprime(x):  # if the checked number is prime itself, stop
             prime_factors.append(x)
@@ -80,7 +81,7 @@ def LargestPrime(x,show_factorization=False):
             if divisors[0] == 1 and divisors.size > 1:   # make sure not to select 1
                 i = 1 
             elif divisors[0] == 1 and divisors.size == 1:  # if one is the only one don't pick it
-                factor_test_arr=factor_test_arr+10
+                factor_test_arr = factor_test_arr+10
                 continue
             else:   # othewise take the smallest divisor
                 i = 0
@@ -89,10 +90,10 @@ def LargestPrime(x,show_factorization=False):
             # repeat the process
             x = int(x/divisors[i])
             prime_factors.append(divisors[i])
-            factor_test_arr = np.arange(1,11)
+            factor_test_arr = np.arange(1, 11)
         else:  # if no number was found increase the test_arr 
                # and keep looking for factors
-            factor_test_arr=factor_test_arr+10
+            factor_test_arr = factor_test_arr+10
             continue
     
     if show_factorization: # show entire factorization if desired
@@ -102,7 +103,7 @@ def LargestPrime(x,show_factorization=False):
         return 0
     return max(prime_factors)
 
-def prob5(arr,naive=False):
+def prob5(arr, naive=False):
     """Return an array where every number is replaced be the largest prime
     in its factorization. Implement two methods. Switching between the two
     is determined by a bool.
@@ -115,7 +116,7 @@ def prob5(arr,naive=False):
     raise NotImplementedError("Problem 5 Incomplete")
 
 
-def prob6(x,y,z,A,split=False):
+def prob6(x, y, z, A, split=False):
     """Takes three vectors and a matrix and performs 
     (np.outer(x,y)*z.reshape(-1,1))@A on them using einsum.
     If split=True, then the einsum operations should be performed
@@ -123,7 +124,7 @@ def prob6(x,y,z,A,split=False):
     operations at once while using optimize=True. """
     raise NotImplementedError("Problem 6 part 1 Incomplete")
 
-def naive6(x,y,z,A):
+def naive6(x, y, z, A):
     """Uses normal numpy functions to do what prob6() does."""
     raise NotImplementedError("Problem 6 part 2 Incomplete")
 

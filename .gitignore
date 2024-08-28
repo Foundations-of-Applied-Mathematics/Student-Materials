@@ -32,6 +32,7 @@ DataVisualization/MLB.npy
 DataVisualization/earthquakes.npy
 DataVisualization/countries.npy
 Differentiation/plane.npy
+Dijkstra/bathymetry.tt3
 DrazinInverse/social_network.csv
 Exceptions_FileIO/hello_world.txt
 Exceptions_FileIO/cf_example1.txt
@@ -49,6 +50,7 @@ GradientMethods/challenger.npy
 HMM/declaration.txt
 HMM/WarAndPeace.txt
 HMM/stocks.npy
+ImageProcessing/balloons_color.jpg
 ImageSegmentation/dream.png
 ImageSegmentation/dream_gray.png
 ImageSegmentation/blue_heart.png
@@ -70,7 +72,6 @@ LeastSquares_Eigenvalues/ellipse.npy
 LeastSquares_Eigenvalues/housing.npy
 LinearRegression/realestate.csv
 LinearTransformations/horse.npy
-LinkedLists/english.txt
 MarkovChains/yoda.txt
 MatplotlibIntro/FARS.npy
 Metropolis/examscores.npy
@@ -140,7 +141,6 @@ Wavelets/mandrill.png
 Wavelets/woman_darkhair.png
 Wavelets/noisy_darkhair.png
 Wavelets/uncompressed_finger.png
-WebScraping/example.html
 WebScraping/san_diego_weather.html
 WebScraping/large_banks_index.html
 WebScraping/large_banks_data.html

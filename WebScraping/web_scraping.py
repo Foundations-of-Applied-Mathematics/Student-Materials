@@ -9,6 +9,7 @@ import requests
 from bs4 import BeautifulSoup
 from matplotlib import pyplot as plt
 import os.path
+import pandas as pd
 
 # Problem 1
 def prob1():

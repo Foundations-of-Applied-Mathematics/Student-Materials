@@ -2,7 +2,6 @@
 
 
 import regular_expressions
-import pytest
 
 def test_prob4():
     """

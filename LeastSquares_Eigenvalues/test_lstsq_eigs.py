@@ -2,7 +2,6 @@
 
 
 import lstsq_eigs
-import pytest
 import numpy as np
 
 def test_qr_algorithm():
@@ -13,9 +12,9 @@ def test_qr_algorithm():
 
 def test_power_method():
     #Sets up test cases
-    A = np.array([[1,1],[1,1]])
-    B = np.array([[1,0,0],[0,2,0],[0,0,3]])
-    C = np.array([[2,2],[1,3]])
+    A = np.array([[1, 1], [1, 1]])
+    B = np.array([[1, 0, 0], [0, 2, 0], [0, 0, 3]])
+    C = np.array([[2, 2], [1, 3]])
     
     Aval, Avec = lstsq_eigs.power_method(A)
     Bval, Bvec = lstsq_eigs.power_method(B)

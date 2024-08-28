@@ -24,16 +24,16 @@ def mel_filterbank(p, n, fs):
     b2 = int(np.ceil(bl[1]))
     b3 = int(np.floor(bl[2]))
     b4 = min(fn2, int(np.ceil(bl[3]))) - 1
-    pf = np.log(1 + np.arange(b1,b4+1) / f0 / n) / lr
+    pf = np.log(1 + np.arange(b1, b4+1) / f0 / n) / lr
     fp = np.floor(pf)
     pm = pf - fp
     M = np.zeros((p, 1+fn2))
-    for c in range(b2-1,b4):
+    for c in range(b2-1, b4):
         r = int(fp[c] - 1)
-        M[r,c+1] += 2 * (1 - pm[c])
+        M[r, c+1] += 2 * (1 - pm[c])
     for c in range(b3):
         r = int(fp[c])
-        M[r,c+1] += 2 * pm[c]
+        M[r, c+1] += 2 * pm[c]
     return M, CF
 
 def dct_matrix(bands, coefs):
@@ -43,13 +43,13 @@ def dct_matrix(bands, coefs):
     equivalent to using scipy.fftpack.dct and then
     dividing by four.
     """
-    x,y = np.meshgrid(range(bands), range(bands)[1:coefs+1])
+    x, y = np.meshgrid(range(bands), range(bands)[1:coefs+1])
     D = np.sqrt(2.0/bands) * np.cos(np.pi * (2*x+1) * y / (2*bands))
     D[0] /= np.sqrt(2)
     return D
 
 # These are computed once to save a bit inside the function.
-# Left as constants for simplicity of use for students, since 
+# Left as constants for simplicity of use for students, since
 #   they never need to edit them.
 FS = 44100                              # Sampling rate
 FRAME_LEN = int(0.03 * FS)              # Frame length
@@ -70,12 +70,12 @@ def extract(x):
     """
     if x.ndim > 1:
         x = np.mean(x, axis=1)
-        
+
     frames = (len(x) - FRAME_LEN) // FRAME_SHIFT + 1
     feature = []
     for f in range(frames):
         # Windowing
-        frame = x[f * FRAME_SHIFT : f * FRAME_SHIFT + FRAME_LEN] * WINDOW
+        frame = x[f * FRAME_SHIFT: f * FRAME_SHIFT + FRAME_LEN] * WINDOW
         # Pre-emphasis
         frame[1:] -= frame[:-1] * PRE_EMPH
         # Power spectrum
@@ -85,11 +85,11 @@ def extract(x):
         X = D @ np.log(M@X)
         feature.append(X)
     feature = np.row_stack(feature)
-    
+
     # Mean & variance normalization
     if feature.shape[0] > 1:
         mu = np.mean(feature, axis=0)
         sigma = np.std(feature, axis=0)
         feature = (feature - mu) / sigma
-        
+
     return feature

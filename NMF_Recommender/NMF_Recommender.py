@@ -1,12 +1,10 @@
 import numpy as np
 import pandas as pd
 from sklearn.decomposition import NMF
-from sklearn.metrics import mean_squared_error as mse
-
 
 class NMFRecommender:
 
-    def __init__(self,random_state=15,rank=2,maxiter=200,tol=1e-3):
+    def __init__(self, random_state=15, rank=2, maxiter=200, tol=1e-3):
         """
         Save the parameter values as attributes.
         """
@@ -92,11 +90,11 @@ def prob4(rank=2):
         H ((k,n) array)
         The number of people with higher component 2 than component 1 scores (float)
     """
-    V = np.array([[0,1,0,1,2,2],
-                  [2,3,1,1,2,2],
-                  [1,1,1,0,1,1],
-                  [0,2,3,4,1,1],
-                  [0,0,0,0,1,0]])
+    V = np.array([[0, 1, 0, 1, 2, 2],
+                  [2, 3, 1, 1, 2, 2],
+                  [1, 1, 1, 0, 1, 1],
+                  [0, 2, 3, 4, 1, 1],
+                  [0, 0, 0, 0, 1, 0]])
                   
     raise NotImplementedError("Problem incomplete")
 

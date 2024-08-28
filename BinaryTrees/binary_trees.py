@@ -6,29 +6,49 @@
 """
 
 # These imports are used in BST.draw().
-import networkx as nx
+import numpy as np
+from time import time
 from matplotlib import pyplot as plt
+
+import networkx as nx
 from networkx.drawing.nx_agraph import graphviz_layout
 
 
-class SinglyLinkedListNode:
-    """A node with a value and a reference to the next node."""
+class DoublyLinkedListNode:
+    """A node with a value and references to the previous and next nodes."""
     def __init__(self, data):
-        self.value, self.next = data, None 
+        self.value = data
+        self.prev, self.next = None, None
 
-class SinglyLinkedList:
-    """A singly linked list with a head and a tail."""
+class DoublyLinkedList:
+    """A doubly linked list with a head and a tail."""
     def __init__(self):
         self.head, self.tail = None, None
 
-    def append(self, data):
-        """Add a node containing the data to the end of the list."""
-        n = SinglyLinkedListNode(data)
-        if self.head is None:
-            self.head, self.tail = n, n
-        else:
-            self.tail.next = n
-            self.tail = n
+    def __len__(self):
+        '''Return the number of nodes in the list.'''
+        count = 0
+        current = self.head
+        while current:
+            count += 1
+            current = current.next
+        return count
+
+    def __str__(self):
+        '''Format and return the list like a standard Python list.'''
+        result = []
+        current = self.head
+        while current:
+            result.append(str(current.value))
+            current = current.next
+        return '[' + ', '.join(result) + ']'
+
+    # Problem 1
+    def insert(self, index, data):
+        '''Insert a piece of data as a new node before the given
+        index so that the new node is now at index.
+        '''
+        raise NotImplementedError("Problem 1 Incomplete")
 
     def iterative_find(self, data):
         """Search iteratively for a node containing the data.
@@ -36,7 +56,7 @@ class SinglyLinkedList:
         raise a ValueError.
 
         Returns:
-            (SinglyLinkedListNode): the node containing the data.
+            (DoublyLinkedListNode): the node containing the data.
         """
         current = self.head
         while current is not None:
@@ -45,16 +65,16 @@ class SinglyLinkedList:
             current = current.next
         raise ValueError(str(data) + " is not in the list")
 
-    # Problem 1
+    # Problem 2
     def recursive_find(self, data):
         """Search recursively for the node containing the data.
         If there is no such node in the list, including if the list is empty,
         raise a ValueError.
 
         Returns:
-            (SinglyLinkedListNode): the node containing the data.
+            (DoublyLinkedListNode): the node containing the data.
         """
-        raise NotImplementedError("Problem 1 Incomplete")
+        raise NotImplementedError("Problem 2 Incomplete")
 
 
 class BSTNode:
@@ -101,7 +121,7 @@ class BST:
         # Start the recursion on the root of the tree.
         return _step(self.root)
 
-    # Problem 2
+    # Problem 3
     def insert(self, data):
         """Insert a new node containing the specified data.
 
@@ -119,9 +139,9 @@ class BST:
             [1, 5, 7]                           |                  (8)
             [8]                                 |
         """
-        raise NotImplementedError("Problem 2 Incomplete")
+        raise NotImplementedError("Problem 3 Incomplete")
 
-    # Problem 3
+    # Problem 4
     def remove(self, data):
         """Remove the node containing the specified data.
 
@@ -152,7 +172,7 @@ class BST:
             >>> print(t2)                       | >>> t4.remove(5)
             []                                  | ValueError: <message>
         """
-        raise NotImplementedError("Problem 3 Incomplete")
+        raise NotImplementedError("Problem 4 Incomplete")
 
     def __str__(self):
         """String representation: a hierarchical view of the BST.
@@ -214,7 +234,7 @@ class AVL(BST):
         """Disable remove() to keep the tree in balance."""
         raise NotImplementedError("remove() is disabled for this class")
 
-    def _rebalance(self,n):
+    def _rebalance(self, n):
         """Rebalance the subtree starting at the specified node."""
         balance = AVL._balance_factor(n)
         if balance == -2:                                   # Left heavy
@@ -310,12 +330,12 @@ class AVL(BST):
         return self._rotate_right_right(n)
 
 
-# Problem 4
-def prob4():
-    """Compare the build and search times of the SinglyLinkedList, BST, and
-    AVL classes. For search times, use SinglyLinkedList.iterative_find(),
+# Problem 5
+def prob5():
+    """Compare the build and search times of the DoublyLinkedList, BST, and
+    AVL classes. For search times, use DoublyLinkedList.iterative_find(),
     BST.find(), and AVL.find() to search for 5 random elements in each
     structure. Plot the number of elements in the structure versus the build
     and search times. Use log scales where appropriate.
     """
-    raise NotImplementedError("Problem 4 Incomplete")
+    raise NotImplementedError("Problem 5 Incomplete")

@@ -5,6 +5,8 @@
 <Date>
 """
 
+from math import sqrt
+
 
 class Backpack:
     """A Backpack object class. Has a name and a list of contents.

@@ -5,6 +5,8 @@
 <Date>
 """
 
+from math import sqrt
+
 
 # Problem 1
 def prob1(L):

@@ -5,6 +5,11 @@
 <Date>
 """
 
+import numpy as np
+from numpy.fft import fft
+from scipy.interpolate import BarycentricInterpolator
+from scipy import linalg as la
+from matplotlib import pyplot as plt
 
 # Problems 1 and 2
 def lagrange(xint, yint, points):

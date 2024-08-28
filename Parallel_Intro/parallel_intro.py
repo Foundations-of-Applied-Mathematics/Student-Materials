@@ -1,5 +1,10 @@
 # iPyParallel - Intro to Parallel Programming
 
+import time
+import numpy as np
+from ipyparallel import Client
+from matplotlib import pyplot as plt
+
 # Problem 1
 def prob1():
     """

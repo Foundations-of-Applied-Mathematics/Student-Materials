@@ -6,7 +6,9 @@
 """
 
 import numpy as np
-
+from scipy import stats
+from scipy import linalg as la
+from scipy.spatial import KDTree
 
 # Problem 1
 def exhaustive_search(X, z):

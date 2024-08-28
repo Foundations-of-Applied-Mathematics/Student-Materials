@@ -5,6 +5,14 @@
 <Date>
 """
 
+import time
+import numpy as np
+import sympy as sy
+from matplotlib import pyplot as plt
+
+from jax import numpy as jnp
+from jax import grad
+
 
 # Problem 1
 def prob1():

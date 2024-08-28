@@ -5,6 +5,8 @@
 <Date>
 """
 
+import numpy as np
+import cvxpy as cp
 
 def prob1():
     """Solve the following convex optimization problem:

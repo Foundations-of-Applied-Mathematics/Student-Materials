@@ -5,6 +5,8 @@
 <Date>
 """
 
+import numpy as np
+from matplotlib import pyplot as plt
 
 # Problem 1
 def var_of_means(n):

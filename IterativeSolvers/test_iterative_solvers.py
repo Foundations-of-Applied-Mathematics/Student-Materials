@@ -2,7 +2,6 @@
 
 
 import iterative_solvers
-import pytest
 import numpy as np
 
 def test_gauss_seidel_sparse():
@@ -14,7 +13,7 @@ def test_gauss_seidel_sparse():
 
 def test_jacobi():
     # Runs the test for different values of n.
-    for n in range(1,15):
+    for n in range(1, 15):
         # Sets up the matrix and the vector.
         b = np.random.random(n)
         A = iterative_solvers.diag_dom(n)

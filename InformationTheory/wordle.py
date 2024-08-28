@@ -82,8 +82,8 @@ class WordleGame:
                 l_word[i] = ' '
                 l_guess[i] = ' '
         # Check the remaining letters
-        for i,c in enumerate(l_guess):
-            if c==' ':
+        for i, c in enumerate(l_guess):
+            if c == ' ':
                 continue
             if l_word.count(c) > 0:
                 # Then the letter exists and is in the wrong place
@@ -91,7 +91,7 @@ class WordleGame:
                 result[i] = 1
                 l_word[t_idx] = ' '
         result = tuple(result)
-        correct = np.all(np.array(result)==2)        
+        correct = np.all(np.array(result) == 2)        
         
         # Increment guess count
         self.guess_ct += 1
@@ -99,13 +99,13 @@ class WordleGame:
         
         # Output things, complete with color
         if self.display:
-            output_chars = (' ','-','+')
+            output_chars = (' ', '-', '+')
             output_colors = (Style.RESET_ALL + Fore.WHITE + Style.DIM,
                             Style.RESET_ALL + Fore.YELLOW + Style.NORMAL,
                             Style.RESET_ALL + Fore.GREEN + Style.BRIGHT)
             top_str = ""
             mid_str = ""
-            for r,char in zip(result,guess):
+            for r, char in zip(result, guess):
                 top_str += output_colors[r] + 3*output_chars[r]
                 mid_str += output_colors[r] + output_chars[r] + char + output_chars[r]
             print(top_str)
@@ -113,7 +113,7 @@ class WordleGame:
             print(top_str+Style.RESET_ALL)
             if correct:
                 print("Congratulations!")
-                print("Number of guesses:",self.guess_ct)
+                print("Number of guesses:", self.guess_ct)
         
         if correct:
             self._game_finished = True

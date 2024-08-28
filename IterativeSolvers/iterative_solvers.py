@@ -7,6 +7,8 @@
 
 import numpy as np
 from scipy import sparse
+from scipy import linalg as la
+from matplotlib import pyplot as plt
 
 # Helper function
 def diag_dom(n, num_entries=None, as_sparse=False):
@@ -22,9 +24,9 @@ def diag_dom(n, num_entries=None, as_sparse=False):
         A ((n,n) ndarray): A (n, n) strictly diagonally dominant matrix.
     """
     if num_entries is None:
-    	num_entries = int(n**1.5) - n
-        
-    A = sparse.dok_matrix((n,n))
+        num_entries = int(n**1.5) - n
+
+    A = sparse.dok_array((n, n))
     rows = np.random.choice(n, size=num_entries)
     cols = np.random.choice(n, size=num_entries)
     data = np.random.randint(-4, 4, size=num_entries)
@@ -32,8 +34,8 @@ def diag_dom(n, num_entries=None, as_sparse=False):
     for i in range(num_entries):
         A[rows[i], cols[i]] = data[i]
     B = A.tocsr()               # convert to row format for the next step
-    for i in range(n):    
-        A[i,i] = abs(B[i]).sum() + 1
+    for i in range(n):
+        A[i, i] = abs(B[i]).sum() + 1
 
     return A.tocsr() if as_sparse else A.toarray()
 
@@ -76,7 +78,7 @@ def gauss_seidel_sparse(A, b, tol=1e-8, maxiter=100):
     Method.
 
     Parameters:
-        A ((n, n) csr_matrix): A (n, n) sparse CSR matrix.
+        A ((n, n) csr_array): A (n, n) sparse CSR matrix.
         b ((n, ) ndarray): A vector of length n.
         tol (float): The convergence tolerance.
         maxiter (int): the maximum number of iterations to perform.
@@ -93,7 +95,7 @@ def sor(A, b, omega, tol=1e-8, maxiter=100):
     Relaxation.
 
     Parameters:
-        A ((n, n) csr_matrix): A (n, n) sparse matrix.
+        A ((n, n) csr_array): A (n, n) sparse matrix.
         b ((n, ) Numpy Array): A vector of length n.
         omega (float in [0,1]): The relaxation factor.
         tol (float): The convergence tolerance.

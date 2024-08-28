@@ -7,7 +7,6 @@
 
 import numpy as np
 
-
 # Problems 1-6
 class SimplexSolver(object):
     """Class for solving the standard linear optimization problem

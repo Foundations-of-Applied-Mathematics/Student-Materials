@@ -9,7 +9,11 @@
 # For example, you need to write max_path_fast(), but keep max_path() unchanged
 # so you can do a before-and-after comparison.
 
+import time
 import numpy as np
+from math import sqrt
+from numba import jit
+from matplotlib import pyplot as plt
 
 
 # Problem 1
@@ -69,7 +73,7 @@ def nearest_column(A, x):
     """
     distances = []
     for j in range(A.shape[1]):
-        distances.append(np.linalg.norm(A[:,j] - x))
+        distances.append(np.linalg.norm(A[:, j] - x))
     return np.argmin(distances)
 
 def nearest_column_fast(A, x):
@@ -140,7 +144,7 @@ def matrix_power(A, n):
             for j in range(m):
                 total = 0
                 for k in range(m):
-                    total += product[i,k] * A[k,j]
+                    total += product[i, k] * A[k, j]
                 temporary_array[j] = total
             product[i] = temporary_array
     return product

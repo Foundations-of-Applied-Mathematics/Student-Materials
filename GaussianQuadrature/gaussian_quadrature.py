@@ -5,6 +5,11 @@
 <Date>
 """
 
+import numpy as np
+from scipy.stats import norm
+from scipy import linalg as la
+from scipy.integrate import quad
+from matplotlib import pyplot as plt
 
 class GaussianQuadrature:
     """Class for integrating functions on arbitrary intervals using Gaussian

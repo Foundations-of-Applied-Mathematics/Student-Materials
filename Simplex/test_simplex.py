@@ -1,7 +1,6 @@
 """Unit testing file for the Simplex lab"""
 
 import simplex
-import pytest
 import numpy as np
 
 def test_simplex():

@@ -44,7 +44,7 @@ def random_walk(max_iters=1e12):
 
     walk = 0
     directions = [1, -1]
-    for i in range(int(max_iters)):
+    for _ in range(int(max_iters)):
         walk += choice(directions)
     return walk
 

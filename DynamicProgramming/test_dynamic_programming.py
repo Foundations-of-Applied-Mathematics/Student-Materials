@@ -2,7 +2,6 @@
 
 
 import dynamic_programming
-import pytest
 
 def test_eat_cake():
     """

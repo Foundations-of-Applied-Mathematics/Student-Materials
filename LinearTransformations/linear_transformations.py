@@ -5,8 +5,10 @@
 <Date>
 """
 
+import time
+import numpy as np
 from random import random
-
+from matplotlib import pyplot as plt
 
 # Problem 1
 def stretch(A, a, b):
@@ -93,8 +95,8 @@ def matrix_matrix_product(A, B):
     """Compute the matrix-matrix product AB as a list of lists."""
     m, n, p = len(A), len(B), len(B[0])
     return [[sum([A[i][k] * B[k][j] for k in range(n)])
-                                    for j in range(p) ]
-                                    for i in range(m) ]
+                                    for j in range(p)]
+                                    for i in range(m)]
 
 # Problem 3
 def prob3():

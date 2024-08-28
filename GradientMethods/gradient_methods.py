@@ -6,6 +6,9 @@
 """
 
 import numpy as np
+from scipy import linalg as la
+from scipy import optimize as opt
+from matplotlib import pyplot as plt
 
 # Problem 1
 def steepest_descent(f, Df, x0, tol=1e-5, maxiter=100):

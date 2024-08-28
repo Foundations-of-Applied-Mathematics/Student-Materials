@@ -1,7 +1,6 @@
 """Unit testing file for Gradient Descent Methods lab"""
 
 import gradient_methods
-import pytest
 import numpy as np
 
 def test_nonlinear_conjugate_gradient():
@@ -12,8 +11,8 @@ def test_nonlinear_conjugate_gradient():
 
 def test_conjugate_gradient():
     # Tests different sized matrices to see if they converge
-    for n in range(1,5):
-        A = np.random.random((n,n))
+    for n in range(1, 5):
+        A = np.random.random((n, n))
         b = np.random.random(n)
         Q = A.T @ A
         x, conv, k = gradient_methods.conjugate_gradient(Q, b, np.random.random(n))

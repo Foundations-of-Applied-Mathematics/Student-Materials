@@ -7,7 +7,6 @@ from sklearn.base import ClassifierMixin
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
-
 class NaiveBayesFilter(ClassifierMixin):
     '''
     A Naive Bayes Classifier that sorts messages into spam or ham.

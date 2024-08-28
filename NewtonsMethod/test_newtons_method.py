@@ -2,7 +2,6 @@
 
 
 import newtons_method
-import pytest
 from math import isclose
 
 def test_newton():

@@ -39,7 +39,7 @@ def starting_point(A, b, c):
     return x, lam, mu
 
 # Use this linear program generator to test your interior point method.
-def randomLP(j,k):
+def randomLP(j, k):
     """Generate a linear program min c^T x s.t. Ax = b, x>=0.
     First generate m feasible constraints, then add
     slack variables to convert it into the above form.
@@ -52,14 +52,14 @@ def randomLP(j,k):
         c ((j+k,), ndarray): Objective function with j trailing 0s.
         x ((k,) ndarray): The first 'k' terms of the solution to the LP.
     """
-    A = np.random.random((j,k))*20 - 10
-    A[A[:,-1]<0] *= -1
+    A = np.random.random((j, k))*20 - 10
+    A[A[:, -1] < 0] *= -1
     x = np.random.random(k)*10
     b = np.zeros(j)
-    b[:k] = A[:k,:] @ x
-    b[k:] = A[k:,:] @ x + np.random.random(j-k)*10
+    b[:k] = A[:k, :] @ x
+    b[k:] = A[k:, :] @ x + np.random.random(j-k)*10
     c = np.zeros(j+k)
-    c[:k] = A[:k,:].sum(axis=0)/k
+    c[:k] = A[:k, :].sum(axis=0)/k
     A = np.hstack((A, np.eye(j)))
     return A, b, -c, x
 

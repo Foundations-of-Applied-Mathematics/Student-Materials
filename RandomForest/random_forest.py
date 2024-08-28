@@ -6,9 +6,13 @@ Section
 Date
 """
 from platform import uname
-import os
 import graphviz
+import os
+from sklearn.ensemble import RandomForestClassifier
+import numpy as np
 from uuid import uuid4
+import random
+from time import time
 
 # Problem 1
 class Question:
@@ -63,10 +67,10 @@ def class_counts(data):
     """ Returns a dictionary with the number of samples under each class label
         formatted {label : number_of_samples} """
     if len(data.shape) == 1: # If there's only one row
-        return {data[-1] : 1}
+        return {data[-1]: 1}
     
     # Create a dictionary  with unique values as keys and the counts as values
-    unique, counts = np.unique(data[:,-1], return_counts=True)
+    unique, counts = np.unique(data[:, -1], return_counts=True)
     return dict(zip(unique, counts))
 
 
@@ -115,7 +119,7 @@ class Leaf:
     """Tree leaf node
     Attribute:
         prediction (dict): Dictionary of labels at the leaf"""
-    def __init__(self,data):
+    def __init__(self, data):
         raise NotImplementedError('Problem 3 Incomplete')
 
 class Decision_Node:
@@ -152,7 +156,7 @@ def predict_tree(sample, my_tree):
         Label to be assigned to new sample"""
     raise NotImplementedError('Problem 5 Incomplete')
 
-def analyze_tree(dataset,my_tree):
+def analyze_tree(dataset, my_tree):
     """Test how accurately a tree classifies a dataset
     Parameters:
         dataset (ndarray): Labeled data with the labels in the last column
@@ -171,7 +175,7 @@ def predict_forest(sample, forest):
         Label to be assigned to new sample"""
     raise NotImplementedError('Problem 6 Incomplete')
 
-def analyze_forest(dataset,forest):
+def analyze_forest(dataset, forest):
     """Test how accurately a forest classifies a dataset
     Parameters:
         dataset (ndarray): Labeled data with the labels in the last column
@@ -208,7 +212,7 @@ def draw_node(graph, my_tree):
     if hasattr(my_tree, "prediction"):
         graph.node(node_id, shape="oval", label="%s" % my_tree.prediction)
         return node_id
-    else: #If it's not a leaf, make a question box
+    else: # If it's not a leaf, make a question box
         graph.node(node_id, shape="box", label="%s" % my_tree.question)
         left_id = draw_node(graph, my_tree.left)
         graph.edge(node_id, left_id, label="T")
@@ -219,7 +223,7 @@ def draw_node(graph, my_tree):
 def draw_tree(my_tree, filename='Digraph'):
     """Draws a tree"""
     # Remove the files if they already exist
-    for file in [f'{filename}.gv',f'{filename}.gv.pdf']:
+    for file in [f'{filename}.gv', f'{filename}.gv.pdf']:
         if os.path.exists(file):
             os.remove(file)
     graph = graphviz.Digraph(comment="Decision Tree")

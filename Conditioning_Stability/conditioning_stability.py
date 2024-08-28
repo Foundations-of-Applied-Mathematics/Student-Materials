@@ -7,6 +7,8 @@
 
 import numpy as np
 import sympy as sy
+from scipy import linalg as la
+from matplotlib import pyplot as plt
 
 
 # Problem 1
@@ -50,12 +52,12 @@ def reorder_eigvals(orig_eigvals, pert_eigvals):
     """
     n = len(pert_eigvals)
     sort_order = np.zeros(n).astype(int)
-    dists = np.abs(orig_eigvals - pert_eigvals.reshape(-1,1))
+    dists = np.abs(orig_eigvals - pert_eigvals.reshape(-1, 1))
     for _ in range(n):
         index = np.unravel_index(np.argmin(dists), dists.shape)
         sort_order[index[0]] = index[1]
-        dists[index[0],:] = np.inf
-        dists[:,index[1]] = np.inf
+        dists[index[0], :] = np.inf
+        dists[:, index[1]] = np.inf
     return pert_eigvals[sort_order]
 
 # Problem 3
