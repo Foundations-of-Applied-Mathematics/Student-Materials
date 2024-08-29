@@ -5,43 +5,43 @@
 <Date>
 """
 
-from math import sqrt
-
+import numpy as np
+import scipy.linalg as la
+from matplotlib import pyplot as plt
 
 # Problem 1
-def golden_section(f, a, b, tol=1e-5, maxiter=100):
-    """Use the golden section search to minimize the unimodal function f.
+def newton(f, x0, Df, tol=1e-5, maxiter=15):
+    """Use Newton's method to approximate a zero of the function f.
 
     Parameters:
-        f (function): A unimodal, scalar-valued function on [a,b].
-        a (float): Left bound of the domain.
-        b (float): Right bound of the domain.
-        tol (float): The stopping tolerance.
+        f (function): a function from R^n to R^n (assume n=1 until Problem 5).
+        x0 (float or ndarray): The initial guess for the zero of f.
+        Df (function): The derivative of f, a function from R^n to R^(nxn).
+        tol (float): Convergence tolerance. The function should returns when
+            the difference between successive approximations is less than tol.
         maxiter (int): The maximum number of iterations to compute.
 
     Returns:
-        (float): The approximate minimizer of f.
-        (bool): Whether or not the algorithm converged.
+        (float or ndarray): The approximation for a zero of f.
+        (bool): Whether or not Newton's method converged.
         (int): The number of iterations computed.
     """
     raise NotImplementedError("Problem 1 Incomplete")
 
 
 # Problem 2
-def newton1d(df, d2f, x0, tol=1e-5, maxiter=100):
-    """Use Newton's method to minimize a function f:R->R.
+def plot_basins(f, Df, zeros, domain, res=1000, iters=15):
+    """Plot the basins of attraction of f on the complex plane.
 
     Parameters:
-        df (function): The first derivative of f.
-        d2f (function): The second derivative of f.
-        x0 (float): An initial guess for the minimizer of f.
-        tol (float): The stopping tolerance.
-        maxiter (int): The maximum number of iterations to compute.
-
-    Returns:
-        (float): The approximate minimizer of f.
-        (bool): Whether or not the algorithm converged.
-        (int): The number of iterations computed.
+        f (function): A function from C to C.
+        Df (function): The derivative of f, a function from C to C.
+        zeros (ndarray): A 1-D array of the zeros of f.
+        domain ([r_min, r_max, i_min, i_max]): A list of scalars that define
+            the window limits and grid domain for the plot.
+        res (int): A scalar that determines the resolution of the plot.
+            The visualized grid has shape (res, res).
+        iters (int): The exact number of times to iterate Newton's method.
     """
     raise NotImplementedError("Problem 2 Incomplete")
 
