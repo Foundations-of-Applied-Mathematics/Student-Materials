@@ -31,7 +31,7 @@ nltk == 3.8.1
 numba == 0.57.1
 numpy == 1.24.3
 pandas == 2.0.2
-Pillow == 9.5.0            # PIL
+Pillow == 10.3.0            # PIL
 pydataset == 0.2.0
 pygame == 2.5.2
 pymc == 5.5.0
