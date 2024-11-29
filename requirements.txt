@@ -27,7 +27,7 @@ matplotlib == 3.6.3
 # mpi4py is installed in install_dependencies.sh
 music21 == 9.1.0
 networkx == 3.1
-nltk == 3.8.1
+nltk == 3.9
 numba == 0.57.1
 numpy == 1.24.3
 pandas == 2.0.2
